@@ -2186,7 +2186,7 @@
   .dashboard-default-sec .card .card-header i,
   .dashboard-2-main .card .card-header i {
     font-size: 12px; }
-  .dashboard-default-sec #chart-dashbord .apexcharts-legend.position-right, .dashboard-default-sec #chart-dashbord .apexcharts-legend.position-left {
+  .dashboard-default-sec #chart-dashboard .apexcharts-legend.position-right, .dashboard-default-sec #chart-dashboard .apexcharts-legend.position-left {
     top: 28px !important; }
   .profile-greeting h3 {
     font-size: 22px;

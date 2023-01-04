@@ -45,4 +45,4 @@
         </script>
     <?php $__env->stopPush(); ?>
 <?php endif; ?>
-<?php /**PATH /home/sharo/Desktop/masterLaravel/resources/views/dashboard/alert/alert.blade.php ENDPATH**/ ?>
+<?php /**PATH E:\laragon\www\kemia\resources\views/dashboard/alert/alert.blade.php ENDPATH**/ ?>

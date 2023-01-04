@@ -172,7 +172,7 @@
                 </div>
               </div>
               <div class="card-body p-0">
-                <div id="chart-timeline-dashbord"></div>
+                <div id="chart-timeline-dashboard"></div>
                 <div class="code-box-copy">
                   <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#yearly-overview" title="Copy"><i class="icofont icofont-copy-alt"></i></button>
                   <pre><code class="language-html" id="yearly-overview">&lt;div class="card income-card"&gt;
@@ -199,7 +199,7 @@
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="card-body p-0"&gt;
-&lt;div id="chart-timeline-dashbord"&gt;&lt;/div&gt;
+&lt;div id="chart-timeline-dashboard"&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;</code></pre>
                 </div>
@@ -231,7 +231,7 @@
                     </div>
                   </div>
                   <div class="card-body p-0">
-                    <div id="chart-dashbord"></div>
+                    <div id="chart-dashboard"></div>
                     <div class="code-box-copy">
                       <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#sell-overview" title="Copy"><i class="icofont icofont-copy-alt"></i></button>
                       <pre><code class="language-html" id="sell-overview">                                     &lt;div class="card"&gt;
@@ -257,7 +257,7 @@
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="card-body p-0"&gt;
-&lt;div id="chart-dashbord"&gt;&lt;/div&gt;
+&lt;div id="chart-dashboard"&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;</code></pre>
                     </div>

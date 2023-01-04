@@ -30,7 +30,7 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $users = User::where('roles_name', '!=', 'Volunteer')->get();
-        return view('dashbord.users.index', compact('users'));
+        return view('dashboard.users.index', compact('users'));
     }
     /**
      * Show the form for creating a new resource.
@@ -41,7 +41,7 @@ class UserController extends Controller
     {
 
         $roles = Role::pluck('name', 'name')->all();
-        return view('dashbord.users.create', compact('roles'));
+        return view('dashboard.users.create', compact('roles'));
     }
     /**
      * Store a newly created resource in storage.
@@ -86,7 +86,7 @@ class UserController extends Controller
         $user = User::find($id);
         $roles = Role::pluck('name', 'name')->all();
         $userRole = $user->roles->pluck('name', 'name')->all();
-        return view('dashbord.users.edit', compact('user', 'roles', 'userRole'));
+        return view('dashboard.users.edit', compact('user', 'roles', 'userRole'));
     }
     /**
      * Update the specified resource in storage.
@@ -132,7 +132,7 @@ class UserController extends Controller
     public function inActiveList()
     {
         $users = User::status('inactive')->get();
-        return view('dashbord.users.in-active-list', compact('users'));
+        return view('dashboard.users.in-active-list', compact('users'));
     }
 
 

@@ -369,9 +369,9 @@ var options = {
   
   colors: [vihoAdminConfig.primary],
 };
-var charttimeline = new ApexCharts(document.querySelector("#chart-timeline-dashbord"), options);
+var charttimeline = new ApexCharts(document.querySelector("#chart-timeline-dashboard"), options);
 charttimeline.render();
-// second chart dashbord dafault
+// second chart dashboard dafault
 var options17 = {
   series: [76, 67, 61, 90],
   chart: {
@@ -438,9 +438,9 @@ var options17 = {
       }
   }]
 };
-var chart17 = new ApexCharts(document.querySelector("#chart-dashbord"), options17);
+var chart17 = new ApexCharts(document.querySelector("#chart-dashboard"), options17);
 chart17.render();
-// chart-4 dashbord
+// chart-4 dashboard
 var options21 = {
   series: [{
       name: 'series1',

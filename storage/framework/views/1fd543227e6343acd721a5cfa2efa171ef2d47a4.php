@@ -71,4 +71,4 @@
 </body>
 
 </html>
-<?php /**PATH /home/sharo/Desktop/masterLaravel/resources/views/layouts/admin/master.blade.php ENDPATH**/ ?>
+<?php /**PATH E:\laragon\www\kemia\resources\views/layouts/admin/master.blade.php ENDPATH**/ ?>

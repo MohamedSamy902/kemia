@@ -64,4 +64,4 @@
     <?php $__env->stopPush(); ?>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.admin.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/sharo/Desktop/masterLaravel/resources/views/dashbord/roles/create.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.admin.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/sharo/Desktop/masterLaravel/resources/views/dashboard/roles/create.blade.php ENDPATH**/ ?>

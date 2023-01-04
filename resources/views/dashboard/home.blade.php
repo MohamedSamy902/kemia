@@ -1,6 +1,6 @@
 @extends('layouts.admin.master')
 
-@section('title', 'Dashbord')
+@section('title', 'Dashboard')
 
 @push('breadcrumb')
     <li class="breadcrumb-item">Pages</li>
