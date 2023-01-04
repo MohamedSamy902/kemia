@@ -221,7 +221,7 @@
   padding-right:50px;  
 }
 .dashboard-default-sec{
-  #chart-dashbord{
+  #chart-dashboard{
     .apexcharts-legend{
       &.position-right,&.position-left{     
         left:0  !important;
@@ -579,7 +579,7 @@
       }
     }
   }
-  #chart-dashbord{
+  #chart-dashboard{
     .apexcharts-legend-series{     
       text-align: right;
       .apexcharts-legend-marker{
@@ -1981,7 +1981,7 @@ span.twitter-typeahead {
       }     
            
     }
-    #chart-dashbord {
+    #chart-dashboard {
       .apexcharts-legend{
         &.position-right,&.position-left{
           display: none !important;

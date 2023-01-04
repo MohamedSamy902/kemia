@@ -42,7 +42,7 @@
         <div class="page-body-wrapper sidebar-icon">
             <!-- Page Sidebar Start-->
             @includeIf('layouts.admin.partials.sidebar')
-            @include('dashbord.alert.alert')
+            @include('dashboard.alert.alert')
             <!-- Page Sidebar Ends-->
             <div class="page-body">
                 <!-- Container-fluid starts-->

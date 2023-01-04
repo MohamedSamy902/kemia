@@ -25848,7 +25848,7 @@ body.dark-sidebar .main-navbar ul.nav-pills {
   margin: auto;
   padding-right: 50px; }
 
-.dashboard-default-sec #chart-dashbord .apexcharts-legend.position-right, .dashboard-default-sec #chart-dashbord .apexcharts-legend.position-left {
+.dashboard-default-sec #chart-dashboard .apexcharts-legend.position-right, .dashboard-default-sec #chart-dashboard .apexcharts-legend.position-left {
   left: 0  !important;
   right: 0;
   width: -webkit-fit-content;
@@ -26139,9 +26139,9 @@ body.dark-sidebar .main-navbar ul.nav-pills {
   .recent-order-sec .table tr:hover p {
     color: #d97f3d; }
 
-#chart-dashbord .apexcharts-legend-series {
+#chart-dashboard .apexcharts-legend-series {
   text-align: right; }
-  #chart-dashbord .apexcharts-legend-series .apexcharts-legend-marker {
+  #chart-dashboard .apexcharts-legend-series .apexcharts-legend-marker {
     display: none;
     text-align: right;
     font-family: "Roboto", sans-serif; }
@@ -27302,7 +27302,7 @@ span.twitter-typeahead .tt-suggestion {
     line-height: 20px; }
   .dashboard-default-sec .profile-greeting .card-header {
     padding-bottom: 5px !important; }
-  #chart-dashbord .apexcharts-legend.position-right, #chart-dashbord .apexcharts-legend.position-left {
+  #chart-dashboard .apexcharts-legend.position-right, #chart-dashboard .apexcharts-legend.position-left {
     display: none !important; }
   .trasaction-sec .transaction-totalbal {
     padding-left: 20px; }

@@ -1,5 +1,5 @@
 
-// dashbord-2 knob chart
+// dashboard-2 knob chart
 
 // right-side-small-chart
 
