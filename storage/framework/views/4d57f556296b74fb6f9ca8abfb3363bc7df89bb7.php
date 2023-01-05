@@ -1,5 +1,7 @@
+
+
 <?php $__env->startSection('title'); ?>
-    <?php echo e(__('user.user')); ?>
+    <?php echo e(__('category.category')); ?>
 
 <?php $__env->stopSection(); ?>
 <?php $__env->startPush('css'); ?>
@@ -11,11 +13,12 @@
 <?php $__env->startSection('content'); ?>
     <?php $__env->startComponent('components.breadcrumb'); ?>
         <?php $__env->slot('breadcrumb_title'); ?>
-            <h3><?php echo e(__('user.user')); ?></h3>
+            <h3><?php echo e(__('category.category')); ?></h3>
         <?php $__env->endSlot(); ?>
-        <li class="breadcrumb-item active"><?php echo e(__('user.user')); ?></li>
+        <li class="breadcrumb-item active"><?php echo e(__('category.category')); ?></li>
     <?php echo $__env->renderComponent(); ?>
 
+    
 
     <div class="container-fluid">
         <div class="row">
@@ -26,36 +29,28 @@
                             <table class="display" id="responsive">
                                 <thead>
                                     <tr>
-                                        <th><?php echo e(__('master.name')); ?></th>
-                                        <th><?php echo e(__('master.email')); ?></th>
-                                        <th><?php echo e(__('master.phone')); ?></th>
-                                        <th><?php echo e(__('master.view')); ?></th>
-                                        <th><?php echo e(__('role.role')); ?></th>
-                                        <th><?php echo e(__('master.image')); ?></th>
+                                        <th><?php echo e(__('categories.name')); ?></th>
+                                        <th><?php echo e(__('categories.status')); ?></th>
+                                        <th><?php echo e(__('categories.parent_id')); ?></th>
 
                                         <th><?php echo e(__('master.processes')); ?></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <tr>
-                                            <td><?php echo e($user->name); ?></td>
-                                            
-                                            <td><?php echo e($user->email); ?></td>
-                                            <td><?php echo e($user->mobile); ?></td>
-                                            <td><?php echo e($user->view); ?></td>
-                                            <td><?php echo e($user->roles_name); ?></td>
-
-                                            <td><img style="max-width: 100px;max-height: 100px;" src="<?php echo e($user->getFirstMediaUrl('user') != null ?  $user->getFirstMediaUrl('user') : asset('assets/images/dashboard/1.png')); ?>"></td>
+                                            <td><?php echo e($category->name ?? 'NULL'); ?></td>
+                                            <td><?php echo e($category->status ?? 'NULL'); ?></td>
+                                            <td><?php echo e($category->subCategory->name ?? 'NULL'); ?></td>
                                             <td>
                                                 <div style="display: flex;">
-                                                    <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('user-edit')): ?>
+                                                    <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('category-edit')): ?>
                                                         <a class="btn btn-outline-primary-2x" style="margin:0 20px;"
-                                                            href="<?php echo e(route('users.edit', $user->id)); ?>"><?php echo e(__('master.edit')); ?></a>
+                                                            href="<?php echo e(route('categories.edit', $category->id)); ?>"><?php echo e(__('master.edit')); ?></a>
                                                     <?php endif; ?>
 
-                                                    <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('user-delete')): ?>
-                                                        <form action="<?php echo e(route('users.destroy', $user->id)); ?>" method="post">
+                                                    <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('category-delete')): ?>
+                                                        <form action="<?php echo e(route('categories.destroy', $category->id)); ?>" method="post">
                                                             <?php echo csrf_field(); ?>
                                                             <?php echo method_field('delete'); ?>
                                                             <input style="border-color: #d22d3d;"
@@ -105,4 +100,4 @@
     <?php $__env->stopPush(); ?>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.admin.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/sharo/Desktop/masterLaravel/resources/views/dashboard/users/index.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.admin.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\laragon\www\kemia\resources\views/dashboard/categories/index.blade.php ENDPATH**/ ?>
