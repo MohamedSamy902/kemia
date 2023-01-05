@@ -1,9 +1,10 @@
 
 
 <?php $__env->startSection('title'); ?>
-    <?php echo e(__('category.category')); ?>
+    <?php echo e(__('product.product') ?? 'Product translation error'); ?>
 
 <?php $__env->stopSection(); ?>
+
 <?php $__env->startPush('css'); ?>
     <link rel="stylesheet" type="text/css" href="<?php echo e(asset('assets/css/datatables.css')); ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo e(asset('assets/css/datatable-extension.css')); ?>">
@@ -13,9 +14,9 @@
 <?php $__env->startSection('content'); ?>
     <?php $__env->startComponent('components.breadcrumb'); ?>
         <?php $__env->slot('breadcrumb_title'); ?>
-            <h3><?php echo e(__('category.category')); ?></h3>
+            <h3><?php echo e(__('product.product')); ?></h3>
         <?php $__env->endSlot(); ?>
-        <li class="breadcrumb-item active"><?php echo e(__('category.category')); ?></li>
+        <li class="breadcrumb-item active"><?php echo e(__('product.product')); ?></li>
     <?php echo $__env->renderComponent(); ?>
 
     
@@ -26,33 +27,46 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="dt-ext table-responsive">
+
                             <table class="display" id="responsive">
+
                                 <thead>
                                     <tr>
-                                        <th><?php echo e(__('categories.id')); ?></th>
-                                        <th><?php echo e(__('categories.name')); ?></th>
-                                        <th><?php echo e(__('categories.status')); ?></th>
-                                        <th><?php echo e(__('categories.parent_id')); ?></th>
+                                        <th><?php echo e(__('product.image')); ?></th>
+                                        <th><?php echo e(__('product.title')); ?></th>
+                                        <th><?php echo e(__('product.price')); ?></th>
+                                        <th><?php echo e(__('product.discount')); ?></th>
+                                        <th><?php echo e(__('product.keywords')); ?></th>
+                                        <th><?php echo e(__('product.description')); ?></th>
+                                        <th><?php echo e(__('product.meta_description')); ?></th>
+                                        <th><?php echo e(__('product.category')); ?></th>
+                                        <th><?php echo e(__('product.sub_category')); ?></th>
 
                                         <th><?php echo e(__('master.processes')); ?></th>
                                     </tr>
                                 </thead>
+
                                 <tbody>
-                                    <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <?php $__currentLoopData = $all_products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <tr>
-                                            <td><?php echo e($category->id); ?></td>
-                                            <td><?php echo e($category->name ?? 'NULL'); ?> <?php if($category->parent_id == null): ?> <label style="color: green;"><?php echo e('(Main Catgeory)'); ?></label> <?php else: ?> <label style="color: rgb(203, 104, 5);"><?php echo e('(Sub-catgeory)'); ?></label>   <?php endif; ?></td>
-                                            <td><?php echo e($category->status ?? 'NULL'); ?></td>
-                                            <td><?php echo e($category->subCategory->id?? 'NULL'); ?></td>
+                                            <td><?php echo e($product->image ?? 'NULL'); ?></td>
+                                            <td><?php echo e($product->title ?? 'NULL'); ?></td>
+                                            <td><?php echo e($product->price ?? 'NULL'); ?></td>
+                                            <td><?php echo e($product->discount ?? 'NULL'); ?></td>
+                                            <td><?php echo e($product->keywords ?? 'NULL'); ?></td>
+                                            <td><?php echo e($product->description ?? 'NULL'); ?></td>
+                                            <td><?php echo e($product->meta_description ?? 'NULL'); ?></td>
+                                            <td><?php echo e($product->category->name ?? 'NULL'); ?></td>
+                                            <td><?php echo e($product->category->parent_id?? 'NULL'); ?></td>
                                             <td>
                                                 <div style="display: flex;">
-                                                    <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('category-edit')): ?>
+                                                    <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('product-edit')): ?>
                                                         <a class="btn btn-outline-primary-2x" style="margin:0 20px;"
-                                                            href="<?php echo e(route('categories.edit', $category->id)); ?>"><?php echo e(__('master.edit')); ?></a>
+                                                            href="<?php echo e(route('products.edit', $product->id)); ?>"><?php echo e(__('master.edit')); ?></a>
                                                     <?php endif; ?>
 
-                                                    <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('category-delete')): ?>
-                                                        <form action="<?php echo e(route('categories.destroy', $category->id)); ?>" method="post">
+                                                    <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('product-delete')): ?>
+                                                        <form action="<?php echo e(route('products.destroy', $product->id)); ?>" method="post">
                                                             <?php echo csrf_field(); ?>
                                                             <?php echo method_field('delete'); ?>
                                                             <input style="border-color: #d22d3d;"
@@ -102,4 +116,4 @@
     <?php $__env->stopPush(); ?>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.admin.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\laragon\www\kemia\resources\views/dashboard/categories/index.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.admin.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\laragon\www\kemia\resources\views/dashboard/products/index.blade.php ENDPATH**/ ?>

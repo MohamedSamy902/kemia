@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 
@@ -37,6 +38,10 @@ Route::group(
                 /** Start Route Categories **/
                 Route::resource('categories', CategoryController::class);
                 /** End Route Categories **/
+
+                /** Start Route Products **/
+                Route::resource('products', ProductController::class)->except(['show']);
+                /** End Route Products **/
             }
 
         );

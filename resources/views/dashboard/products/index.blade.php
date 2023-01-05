@@ -1,8 +1,9 @@
 @extends('layouts.admin.master')
 
 @section('title')
-    {{ __('category.category') }}
+    {{ __('product.product') ?? 'Product translation error' }}
 @endsection
+
 @push('css')
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/datatables.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/datatable-extension.css') }}">
@@ -12,18 +13,18 @@
 @section('content')
     @component('components.breadcrumb')
         @slot('breadcrumb_title')
-            <h3>{{ __('category.category') }}</h3>
+            <h3>{{ __('product.product') }}</h3>
         @endslot
-        <li class="breadcrumb-item active">{{ __('category.category') }}</li>
+        <li class="breadcrumb-item active">{{ __('product.product') }}</li>
     @endcomponent
 
-    {{-- @if(session()->has('category_created'))
+    {{-- @if(session()->has('product_created'))
         <div class="alert alert-success text-center mx-auto w-75">
-            {{ session()->get('category_created') }}
+            {{ session()->get('product_created') }}
         </div>
-    @elseif(session()->has('category_updated'))
+    @elseif(session()->has('product_updated'))
         <div class="alert alert-success text-center mx-auto w-75">
-            {{ session()->get('category_updated') }}
+            {{ session()->get('product_updated') }}
         </div>
     @endif --}}
 
@@ -33,31 +34,46 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="dt-ext table-responsive">
+
                             <table class="display" id="responsive">
+
                                 <thead>
                                     <tr>
-                                        <th>{{ __('categories.name') }}</th>
-                                        <th>{{ __('categories.status') }}</th>
-                                        <th>{{ __('categories.parent_id') }}</th>
+                                        <th>{{ __('product.image') }}</th>
+                                        <th>{{ __('product.title') }}</th>
+                                        <th>{{ __('product.price') }}</th>
+                                        <th>{{ __('product.discount') }}</th>
+                                        <th>{{ __('product.keywords') }}</th>
+                                        <th>{{ __('product.description') }}</th>
+                                        <th>{{ __('product.meta_description') }}</th>
+                                        <th>{{ __('product.category') }}</th>
+                                        <th>{{ __('product.sub_category') }}</th>
 
                                         <th>{{ __('master.processes') }}</th>
                                     </tr>
                                 </thead>
+
                                 <tbody>
-                                    @foreach ($categories as $category)
+                                    @foreach ($all_products as $product)
                                         <tr>
-                                            <td>{{ $category->name ?? 'NULL' }} @if($category->parent_id == null) <label style="color: green;">{{ '(Main Catgeory)' }}</label> @else <label style="color: rgb(183, 92, 2);">{{ '(Sub-catgeory)' }}</label>   @endif</td>
-                                            <td>{{ $category->status ?? 'NULL' }}</td>
-                                            <td>{{ $category->subCategory->name ?? 'NULL' }}</td>
+                                            <td>{{ $product->image ?? 'NULL' }}</td>
+                                            <td>{{ $product->title ?? 'NULL' }}</td>
+                                            <td>{{ $product->price ?? 'NULL' }}</td>
+                                            <td>{{ $product->discount ?? 'NULL' }}</td>
+                                            <td>{{ $product->keywords ?? 'NULL' }}</td>
+                                            <td>{{ $product->description ?? 'NULL' }}</td>
+                                            <td>{{ $product->meta_description ?? 'NULL' }}</td>
+                                            <td>{{ $product->category->name ?? 'NULL' }}</td>
+                                            <td>{{ $product->category->parent_id?? 'NULL' }}</td>
                                             <td>
                                                 <div style="display: flex;">
-                                                    @can('category-edit')
+                                                    @can('product-edit')
                                                         <a class="btn btn-outline-primary-2x" style="margin:0 20px;"
-                                                            href="{{ route('categories.edit', $category->id) }}">{{ __('master.edit') }}</a>
+                                                            href="{{ route('products.edit', $product->id) }}">{{ __('master.edit') }}</a>
                                                     @endcan
 
-                                                    @can('category-delete')
-                                                        <form action="{{ route('categories.destroy', $category->id) }}" method="post">
+                                                    @can('product-delete')
+                                                        <form action="{{ route('products.destroy', $product->id) }}" method="post">
                                                             @csrf
                                                             @method('delete')
                                                             <input style="border-color: #d22d3d;"
