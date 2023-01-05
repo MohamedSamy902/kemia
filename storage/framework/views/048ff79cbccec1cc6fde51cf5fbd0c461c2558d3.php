@@ -24,9 +24,16 @@
                                 aria-hidden="true"></i></div>
                     </li>
                     <li class="sidebar-main-title">
-                        <div>
+                        <div class="text-center">
                             <h6><?php echo e(__('master.list')); ?></h6>
                         </div>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="<?php echo e(route('index')); ?>" class="nav-link menu-title" href="javascript:void(0)">
+                            <i data-feather="home"></i>
+                            <span><?php echo e(__('Dashboard Home')); ?></span>
+                        </a>
                     </li>
 
                     <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('role-list')): ?>
@@ -62,6 +69,46 @@
                                 <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('user-create')): ?>
                                     <li><a href="<?php echo e(route('users.create')); ?>"
                                             class="<?php echo e(routeActive('users.create')); ?>"><?php echo e(__('user.user_add')); ?>
+
+                                        </a></li>
+                                <?php endif; ?>
+                            </ul>
+                        </li>
+                    <?php endif; ?>
+
+                    <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('category-list')): ?>
+                        <li class="dropdown">
+                            <a class="nav-link menu-title <?php echo e(prefixActive('categories')); ?>" href="javascript:void(0)">
+                                <i data-feather="home"></i>
+                                <span><?php echo e(__('category.category')); ?></span>
+                            </a>
+                            <ul class="nav-submenu menu-content" style="display: <?php echo e(prefixBlock('categories')); ?>;">
+                                <li><a href="<?php echo e(route('categories.index')); ?>"
+                                        class="<?php echo e(routeActive('categories.index')); ?>"><?php echo e(__('category.category_list')); ?></a>
+                                </li>
+                                <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('category-create')): ?>
+                                    <li><a href="<?php echo e(route('categories.create')); ?>"
+                                            class="<?php echo e(routeActive('categories.create')); ?>"><?php echo e(__('category.add_category')); ?>
+
+                                        </a></li>
+                                <?php endif; ?>
+                            </ul>
+                        </li>
+                    <?php endif; ?>
+
+                    <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('product-list')): ?>
+                        <li class="dropdown">
+                            <a class="nav-link menu-title <?php echo e(prefixActive('products')); ?>" href="javascript:void(0)">
+                                <i data-feather="home"></i>
+                                <span><?php echo e(__('product.product')); ?></span>
+                            </a>
+                            <ul class="nav-submenu menu-content" style="display: <?php echo e(prefixBlock('products')); ?>;">
+                                <li><a href="<?php echo e(route('products.index')); ?>"
+                                        class="<?php echo e(routeActive('products.index')); ?>"><?php echo e(__('product.product_list')); ?></a>
+                                </li>
+                                <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('product-create')): ?>
+                                    <li><a href="<?php echo e(route('products.create')); ?>"
+                                            class="<?php echo e(routeActive('products.create')); ?>"><?php echo e(__('product.product_add')); ?>
 
                                         </a></li>
                                 <?php endif; ?>

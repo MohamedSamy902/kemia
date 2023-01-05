@@ -1,3 +1,5 @@
+
+
 <?php $__env->startSection('title'); ?>
     E-labclub | الصلاحيات
 <?php $__env->stopSection(); ?>
@@ -88,4 +90,4 @@
     <script src="<?php echo e(asset('assets/js/custom-card/custom-card.js')); ?>"></script>
 <?php $__env->stopPush(); ?>
 
-<?php echo $__env->make('layouts.admin.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/sharo/Desktop/masterLaravel/resources/views/dashboard/roles/index.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.admin.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\laragon\www\kemia\resources\views/dashboard/roles/index.blade.php ENDPATH**/ ?>

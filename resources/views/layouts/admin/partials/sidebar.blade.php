@@ -24,9 +24,16 @@
                                 aria-hidden="true"></i></div>
                     </li>
                     <li class="sidebar-main-title">
-                        <div>
+                        <div class="text-center">
                             <h6>{{ __('master.list') }}</h6>
                         </div>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="{{ route('index') }}" class="nav-link menu-title" href="javascript:void(0)">
+                            <i data-feather="home"></i>
+                            <span>{{ __('Dashboard Home') }}</span>
+                        </a>
                     </li>
 
                     @can('role-list')
@@ -61,6 +68,44 @@
                                 @can('user-create')
                                     <li><a href="{{ route('users.create') }}"
                                             class="{{ routeActive('users.create') }}">{{ __('user.user_add') }}
+                                        </a></li>
+                                @endcan
+                            </ul>
+                        </li>
+                    @endcan
+
+                    @can('category-list')
+                        <li class="dropdown">
+                            <a class="nav-link menu-title {{ prefixActive('categories') }}" href="javascript:void(0)">
+                                <i data-feather="home"></i>
+                                <span>{{ __('category.category') }}</span>
+                            </a>
+                            <ul class="nav-submenu menu-content" style="display: {{ prefixBlock('categories') }};">
+                                <li><a href="{{ route('categories.index') }}"
+                                        class="{{ routeActive('categories.index') }}">{{ __('category.category_list') }}</a>
+                                </li>
+                                @can('category-create')
+                                    <li><a href="{{ route('categories.create') }}"
+                                            class="{{ routeActive('categories.create') }}">{{ __('category.add_category') }}
+                                        </a></li>
+                                @endcan
+                            </ul>
+                        </li>
+                    @endcan
+
+                    @can('product-list')
+                        <li class="dropdown">
+                            <a class="nav-link menu-title {{ prefixActive('products') }}" href="javascript:void(0)">
+                                <i data-feather="home"></i>
+                                <span>{{ __('product.product') }}</span>
+                            </a>
+                            <ul class="nav-submenu menu-content" style="display: {{ prefixBlock('products') }};">
+                                <li><a href="{{ route('products.index') }}"
+                                        class="{{ routeActive('products.index') }}">{{ __('product.product_list') }}</a>
+                                </li>
+                                @can('product-create')
+                                    <li><a href="{{ route('products.create') }}"
+                                            class="{{ routeActive('products.create') }}">{{ __('product.product_add') }}
                                         </a></li>
                                 @endcan
                             </ul>

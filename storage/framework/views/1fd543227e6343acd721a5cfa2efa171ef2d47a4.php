@@ -25,6 +25,9 @@
         rel="stylesheet">
     <!-- Font Awesome-->
     <?php if ($__env->exists('layouts.admin.partials.css')) echo $__env->make('layouts.admin.partials.css', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <link 
+        href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" 
+        rel="stylesheet">
 </head>
 
 <body class="<?php echo e(App::getLocale() == 'ar' ? 'rtl' : 'ltr'); ?>">
@@ -54,8 +57,11 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-6 footer-copyright">
-                            <p class="mb-0">Copyright 2022-2023 © by <a href="http://wa.me/01150100104">Mohamed
-                                    Samy</a></p>
+                            <p class="mb-0">Copyright 2022-2023 © by 
+                                <a href="http://wa.me/01150100104">Mohamed Samy</a>, 
+                                <a href="http://wa.me/01010110457">Kareem Tarek</a> & 
+                                <a href="http://wa.me/01112554996">Ahmed Khalifa</a>
+                            </p>
                         </div>
                         <div class="col-md-6">
                             <p class="pull-right mb-0">Hand crafted & made with <i
