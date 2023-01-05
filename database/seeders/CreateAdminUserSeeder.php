@@ -37,7 +37,7 @@ class CreateAdminUserSeeder extends Seeder
             'email' => 'khalifa@app.com',
             'password' => bcrypt('123456'),
             'roles_name' => 'admin',
-            'mobile' => 01000000111,
+            'mobile' => 01112554996,
         ]);
 
         $role = Role::create(['name' => 'admin']);
