@@ -16,6 +16,8 @@ return  [
     'null'          => 'NULL',
 
     'name'                  => 'Name',
+    'arabic'                => 'Arabic',
+    'english'               => 'English',
     'name_ar'               => 'Name Ar',
     'name_en'               => 'Name En',
     'name_day'              => 'Name Day',
