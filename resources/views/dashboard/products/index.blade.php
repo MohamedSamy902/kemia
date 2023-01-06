@@ -39,6 +39,7 @@
 
                                 <thead>
                                     <tr>
+                                        <th>#</th>
                                         <th>{{ __('product.image') }}</th>
                                         <th>{{ __('product.title') }}</th>
                                         <th>{{ __('product.price') }}</th>
@@ -56,15 +57,16 @@
                                 <tbody>
                                     @foreach ($all_products as $product)
                                         <tr>
-                                            <td>{{ $product->image ?? 'NULL' }}</td>
-                                            <td>{{ $product->title ?? 'NULL' }}</td>
-                                            <td>{{ $product->price ?? 'NULL' }}</td>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td><img src="{{ $product->image }}" alt="{{ $product->title.'img' }}"></td>
+                                            <td>{{ $product->title }}</td>
+                                            <td>{{ $product->price }}</td>
                                             <td>{{ $product->discount ?? 'NULL' }}</td>
                                             <td>{{ $product->keywords ?? 'NULL' }}</td>
                                             <td>{{ $product->description ?? 'NULL' }}</td>
                                             <td>{{ $product->meta_description ?? 'NULL' }}</td>
                                             <td>{{ $product->category->name ?? 'NULL' }}</td>
-                                            <td>{{ $product->category->parent_id?? 'NULL' }}</td>
+                                            <td>{{ $product->category->parent_id ?? 'NULL' }}</td>
                                             <td>
                                                 <div style="display: flex;">
                                                     @can('product-edit')

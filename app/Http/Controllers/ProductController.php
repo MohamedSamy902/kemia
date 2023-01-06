@@ -35,7 +35,7 @@ class ProductController extends Controller
     public function create()
     {
         $product_category    = Category::whereNull('parent_id')->get();
-        $product_subcategory = Category::where('parent_id')->get();
+        $product_subcategory = Category::whereNotNull('parent_id')->get();
         return view('dashboard.products.create', compact('product_category', 'product_subcategory'));
     }
 

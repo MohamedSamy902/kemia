@@ -33,7 +33,7 @@
 
                             <div class="row g-1">
                                 <div class="col-md-12 mb-3">
-                                    <label class="form-label" for="validationCustom01"><?php echo e(__('category.name')); ?></label>
+                                    <label class="form-label" for="validationCustom01"><?php echo e(__('category.name')); ?></label> <span class="text-danger">*</span>
                                     <input class="form-control" id="validationCustom01" type="text" required=""
                                         name="name" placeholder="ex: ELECTRONICS" value="<?php echo e(old('name')); ?>" />
                                     <div class="valid-feedback"><?php echo e(__('validation.valid_feedback')); ?></div>

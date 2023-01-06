@@ -108,7 +108,7 @@
                                 </li>
                                 <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('product-create')): ?>
                                     <li><a href="<?php echo e(route('products.create')); ?>"
-                                            class="<?php echo e(routeActive('products.create')); ?>"><?php echo e(__('product.product_add')); ?>
+                                            class="<?php echo e(routeActive('products.create')); ?>"><?php echo e(__('product.add_product')); ?>
 
                                         </a></li>
                                 <?php endif; ?>

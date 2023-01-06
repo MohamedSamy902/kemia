@@ -77,13 +77,13 @@
                                     <label class="form-label" for="validationDefault08">{{ __('product.sub-category') }}</label>
                                     <select name="category_id" class="form-control" value="{{ old('category_id') }}">
                                         <option value="" selected>No sub-category selected.</option>
-                                        {{-- @foreach($product_subcategory as $psubcat)
-                                            @if($product_category->id == $product_subcategory->id)
+                                        @foreach($product_subcategory as $psubcat)
+                                            {{-- @if($product_category->id == $product_subcategory->id) --}}
                                                 <option value="{{ $psubcat->id }}">{{ $psubcat->name }}</option>
-                                            @else
+                                            {{-- @else
                                                 <option value="">no</option>
-                                            @endif
-                                        @endforeach --}}
+                                            @endif --}}
+                                        @endforeach
                                     </select>
                                 </div>
 

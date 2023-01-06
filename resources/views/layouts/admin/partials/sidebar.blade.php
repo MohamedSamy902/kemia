@@ -105,7 +105,7 @@
                                 </li>
                                 @can('product-create')
                                     <li><a href="{{ route('products.create') }}"
-                                            class="{{ routeActive('products.create') }}">{{ __('product.product_add') }}
+                                            class="{{ routeActive('products.create') }}">{{ __('product.add_product') }}
                                         </a></li>
                                 @endcan
                             </ul>

@@ -42,7 +42,7 @@
                                 </div>
                             </div>
 
-                            <div class="row g-1">
+                            <div class="row g-1 <?php if($category->parent_id == null): ?> d-none <?php endif; ?>">
                                 <div class="col-md-12 mb-3">
                                     <label class="form-label"><?php echo e(__('category.sub-category-of')); ?></label>
                                         <select name="parent_id" class="form-control" value="<?php echo e(Request::old('parent_id') ? Request::old('parent_id') : $category->parent_id); ?>">
@@ -53,7 +53,6 @@
                                         </select>
                                 </div>
                             </div>
-
 
                             <button class="btn btn-primary" type="submit">حفظ</button>
                         </form>

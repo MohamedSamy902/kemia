@@ -28,6 +28,7 @@
                             <table class="display" id="responsive">
                                 <thead>
                                     <tr>
+                                        <th>#</th>
                                         <th>{{ __('master.name') }}</th>
 
                                         <th>{{ __('master.processes') }}</th>
@@ -36,6 +37,7 @@
                                 <tbody>
                                     @foreach ($roles as $role)
                                         <tr>
+                                            <td>{{ $loop->iteration }}</td>
                                             <td>{{ $role->name }}</td>
 
                                             <td>

@@ -27,6 +27,7 @@
                             <table class="display" id="responsive">
                                 <thead>
                                     <tr>
+                                        <th>#</th>
                                         <th>{{ __('master.name') }}</th>
                                         <th>{{ __('master.email') }}</th>
                                         <th>{{ __('master.phone') }}</th>
@@ -40,6 +41,7 @@
                                 <tbody>
                                     @foreach ($users as $user)
                                         <tr>
+                                            <td>{{ $loop->iteration }}</td>
                                             <td>{{ $user->name }}</td>
                                             {{-- <td><a href="{{ route('users.show', $user->id) }}">{{ $user->name }}</a>
                                             </td> --}}

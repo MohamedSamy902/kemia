@@ -1,9 +1,10 @@
 
 
 <?php $__env->startSection('title'); ?>
-    <?php echo e(__('user.user')); ?>
+    <?php echo e(__('product.product') ?? 'Product translation error'); ?>
 
 <?php $__env->stopSection(); ?>
+
 <?php $__env->startPush('css'); ?>
     <link rel="stylesheet" type="text/css" href="<?php echo e(asset('assets/css/datatables.css')); ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo e(asset('assets/css/datatable-extension.css')); ?>">
@@ -13,11 +14,12 @@
 <?php $__env->startSection('content'); ?>
     <?php $__env->startComponent('components.breadcrumb'); ?>
         <?php $__env->slot('breadcrumb_title'); ?>
-            <h3><?php echo e(__('user.user')); ?></h3>
+            <h3><?php echo e(__('product.product')); ?></h3>
         <?php $__env->endSlot(); ?>
-        <li class="breadcrumb-item active"><?php echo e(__('user.user')); ?></li>
+        <li class="breadcrumb-item active"><?php echo e(__('product.product')); ?></li>
     <?php echo $__env->renderComponent(); ?>
 
+    
 
     <div class="container-fluid">
         <div class="row">
@@ -25,41 +27,48 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="dt-ext table-responsive">
+
                             <table class="display" id="responsive">
+
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th><?php echo e(__('master.name')); ?></th>
-                                        <th><?php echo e(__('master.email')); ?></th>
-                                        <th><?php echo e(__('master.phone')); ?></th>
-                                        <th><?php echo e(__('master.view')); ?></th>
-                                        <th><?php echo e(__('role.role')); ?></th>
-                                        <th><?php echo e(__('master.image')); ?></th>
+                                        <th><?php echo e(__('product.image')); ?></th>
+                                        <th><?php echo e(__('product.title')); ?></th>
+                                        <th><?php echo e(__('product.price')); ?></th>
+                                        <th><?php echo e(__('product.discount')); ?></th>
+                                        <th><?php echo e(__('product.keywords')); ?></th>
+                                        <th><?php echo e(__('product.description')); ?></th>
+                                        <th><?php echo e(__('product.meta_description')); ?></th>
+                                        <th><?php echo e(__('product.category')); ?></th>
+                                        <th><?php echo e(__('product.sub_category')); ?></th>
 
                                         <th><?php echo e(__('master.processes')); ?></th>
                                     </tr>
                                 </thead>
+
                                 <tbody>
-                                    <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <?php $__currentLoopData = $all_products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <tr>
                                             <td><?php echo e($loop->iteration); ?></td>
-                                            <td><?php echo e($user->name); ?></td>
-                                            
-                                            <td><?php echo e($user->email); ?></td>
-                                            <td><?php echo e($user->mobile); ?></td>
-                                            <td><?php echo e($user->view); ?></td>
-                                            <td><?php echo e($user->roles_name); ?></td>
-
-                                            <td><img style="max-width: 100px;max-height: 100px;" src="<?php echo e($user->getFirstMediaUrl('user') != null ?  $user->getFirstMediaUrl('user') : asset('assets/images/dashboard/1.png')); ?>"></td>
+                                            <td><img src="<?php echo e($product->image); ?>" alt="<?php echo e($product->title.'img'); ?>"></td>
+                                            <td><?php echo e($product->title); ?></td>
+                                            <td><?php echo e($product->price); ?></td>
+                                            <td><?php echo e($product->discount ?? 'NULL'); ?></td>
+                                            <td><?php echo e($product->keywords ?? 'NULL'); ?></td>
+                                            <td><?php echo e($product->description ?? 'NULL'); ?></td>
+                                            <td><?php echo e($product->meta_description ?? 'NULL'); ?></td>
+                                            <td><?php echo e($product->category->name ?? 'NULL'); ?></td>
+                                            <td><?php echo e($product->category->parent_id ?? 'NULL'); ?></td>
                                             <td>
                                                 <div style="display: flex;">
-                                                    <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('user-edit')): ?>
+                                                    <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('product-edit')): ?>
                                                         <a class="btn btn-outline-primary-2x" style="margin:0 20px;"
-                                                            href="<?php echo e(route('users.edit', $user->id)); ?>"><?php echo e(__('master.edit')); ?></a>
+                                                            href="<?php echo e(route('products.edit', $product->id)); ?>"><?php echo e(__('master.edit')); ?></a>
                                                     <?php endif; ?>
 
-                                                    <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('user-delete')): ?>
-                                                        <form action="<?php echo e(route('users.destroy', $user->id)); ?>" method="post">
+                                                    <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('product-delete')): ?>
+                                                        <form action="<?php echo e(route('products.destroy', $product->id)); ?>" method="post">
                                                             <?php echo csrf_field(); ?>
                                                             <?php echo method_field('delete'); ?>
                                                             <input style="border-color: #d22d3d;"
@@ -109,4 +118,4 @@
     <?php $__env->stopPush(); ?>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.admin.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\laragon\www\kemia\resources\views/dashboard/users/index.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.admin.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\laragon\www\kemia\resources\views/dashboard/products/index.blade.php ENDPATH**/ ?>

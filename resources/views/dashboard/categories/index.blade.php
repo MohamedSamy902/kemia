@@ -36,6 +36,7 @@
                             <table class="display" id="responsive">
                                 <thead>
                                     <tr>
+                                        <th>#</th>
                                         <th>{{ __('categories.name') }}</th>
                                         <th>{{ __('categories.status') }}</th>
                                         <th>{{ __('categories.parent_id') }}</th>
@@ -46,8 +47,22 @@
                                 <tbody>
                                     @foreach ($categories as $category)
                                         <tr>
-                                            <td>{{ $category->name ?? 'NULL' }} @if($category->parent_id == null) <label style="color: green;">{{ '(Main Catgeory)' }}</label> @else <label style="color: rgb(183, 92, 2);">{{ '(Sub-catgeory)' }}</label>   @endif</td>
-                                            <td>{{ $category->status ?? 'NULL' }}</td>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>
+                                                {{ $category->name }} 
+                                                @if($category->parent_id == null) 
+                                                    <label style="color: green;">{{ '(Main Catgeory)' }}</label> 
+                                                @else 
+                                                    <label style="color: rgb(183, 92, 2);">{{ '(Sub-catgeory)' }}</label> 
+                                                @endif
+                                            </td>
+                                            <td class="text-center">
+                                                @if($category->status == "available")
+                                                    <h6><span class="badge badge-success">{{ ucfirst($category->status) }}</span></h6>
+                                                @else
+                                                    <h6><span class="badge badge-danger">{{ ucfirst($category->status) }}</span></h6>
+                                                @endif
+                                            </td>
                                             <td>{{ $category->subCategory->name ?? 'NULL' }}</td>
                                             <td>
                                                 <div style="display: flex;">
