@@ -50,12 +50,18 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $data = array(
-            'name'      => $request->name ,
-            'parent_id' => $request->parent_id ,
-        );
-        // dd($data);
-        $category = Category::create($data);
+        // $data = array(
+        //     'name'      => $request->name ,
+        //     'parent_id' => $request->parent_id ,
+        // );
+        // // dd($data);
+        // $category = Category::create($data);
+
+        $category = new Category();
+        $category->setTranslation('name', 'en', $request->name_en)
+            ->setTranslation('name', 'ar', $request->name_ar);
+        $category->parent_id = $request->parent_id;
+        $category->save();
 
         // return redirect()->route('categories.index')
         // ->with(['category_created' => "($request->name) is created successfully!"]);

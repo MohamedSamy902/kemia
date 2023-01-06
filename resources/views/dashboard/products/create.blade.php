@@ -85,7 +85,7 @@
                             <div class="row g-2">
 
                                 <div class="col-md-6">
-                                    <label class="form-label" for="validationDefault08">{{ __('product.category') }} <span class="text-danger">*</span></label>
+                                    <label class="form-label" for="validationDefault08">{{ __('product.product_category') }} <span class="text-danger">*</span></label>
                                     <select name="category_id" class="form-control" value="{{ old('category_id') }}">
                                         <option value="" selected>No category selected.</option>
                                         @foreach($product_category as $pcat)
@@ -97,7 +97,7 @@
                                 </div>
 
                                 {{-- <div class="col-md-6 mb-3">
-                                    <label class="form-label" for="validationDefault08">{{ __('product.sub-category') }} <span class="text-danger">*</span></label>
+                                    <label class="form-label" for="validationDefault08">{{ __('product.product_sub_category') }} <span class="text-danger">*</span></label>
                                     <select name="category_id" class="form-control" value="{{ old('category_id') }}">
                                         <option value="" selected>No sub-category selected.</option>
                                         @foreach($product_subcategory as $psubcat)
@@ -109,7 +109,7 @@
                                 </div> --}}
                                 
                                 {{-- <div class="col-md-6 mb-3">
-                                    <label class="form-label" for="validationDefault08">{{ __('product.sub-category') }} <span class="text-danger">*</span></label>
+                                    <label class="form-label" for="validationDefault08">{{ __('product.product_sub_category') }} <span class="text-danger">*</span></label>
                                     <select name="category_id" class="form-control" value="{{ old('category_id') }}">
                                         @foreach($product_subcategory as $psubcat)
                                             <option value="" disabled selected>Please select a sub-category</option>
@@ -125,7 +125,7 @@
                                 <div class="col-md-12 mb-3">
                                     <label class="form-label" for="validationCustom01">{{ __('product.keywords') }}</label>
                                     <input class="form-control" id="validationCustom01" type="text"
-                                        name="keywords" placeholder="ex: , Music, etc." value="{{ old('keywords') }}" />
+                                        name="keywords" placeholder="ex: Clips, Music, etc." value="{{ old('keywords') }}" />
                                     <div class="valid-feedback">{{ __('validation.valid_feedback') }}</div>
                                     <div class="invalid-feedback">{{ __('validation.invalid_feedback') }}</div>
                                 </div>

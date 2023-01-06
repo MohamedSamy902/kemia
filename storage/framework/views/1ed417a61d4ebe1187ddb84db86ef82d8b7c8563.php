@@ -84,7 +84,7 @@
                             <div class="row g-2">
 
                                 <div class="col-md-6">
-                                    <label class="form-label" for="validationDefault08"><?php echo e(__('product.category')); ?> <span class="text-danger">*</span></label>
+                                    <label class="form-label" for="validationDefault08"><?php echo e(__('product.product_category')); ?> <span class="text-danger">*</span></label>
                                     <select name="category_id" class="form-control" value="<?php echo e(old('category_id')); ?>">
                                         <option value="" selected>No category selected.</option>
                                         <?php $__currentLoopData = $product_category; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pcat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -105,7 +105,7 @@
                                 <div class="col-md-12 mb-3">
                                     <label class="form-label" for="validationCustom01"><?php echo e(__('product.keywords')); ?></label>
                                     <input class="form-control" id="validationCustom01" type="text"
-                                        name="keywords" placeholder="ex: , Music, etc." value="<?php echo e(old('keywords')); ?>" />
+                                        name="keywords" placeholder="ex: Clips, Music, etc." value="<?php echo e(old('keywords')); ?>" />
                                     <div class="valid-feedback"><?php echo e(__('validation.valid_feedback')); ?></div>
                                     <div class="invalid-feedback"><?php echo e(__('validation.invalid_feedback')); ?></div>
                                 </div>

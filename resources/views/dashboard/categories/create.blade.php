@@ -26,17 +26,36 @@
                         <h5>{{ __('category.category') }}</h5>
                     </div>
                     <div class="card-body">
+                        <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                            <li class="nav-item"><a class="nav-link @if(LaravelLocalization::getCurrentLocale() == 'ar') active  @endif" id="ar-tab" data-bs-toggle="pill" href="#ar" role="tab" aria-controls="ar" aria-selected="@if(LaravelLocalization::getCurrentLocale() == 'ar') true @else false @endif">{{__('master.arabic')}}<div class="media"></div></a></li>
+                            <li class="nav-item"><a class="nav-link @if(LaravelLocalization::getCurrentLocale() == 'en') active  @endif" id="en-tab" data-bs-toggle="pill" href="#en" role="tab" aria-controls="en" aria-selected="@if(LaravelLocalization::getCurrentLocale() == 'ar') true @else false @endif">{{__('master.english')}}</a></li>
+                        </ul>
+                        
                         <form class="needs-validation" novalidate="" method="post" action="{{ route('categories.store') }}"
                             enctype="multipart/form-data">
                             @csrf
 
-                            <div class="row g-1">
-                                <div class="col-md-12 mb-3">
-                                    <label class="form-label" for="validationCustom01">{{ __('category.name') }} <span class="text-danger">*</span></label>
-                                    <input class="form-control" id="validationCustom01" type="text" required=""
-                                        name="name" placeholder="ex: ELECTRONICS" value="{{ old('name') }}" />
-                                    <div class="valid-feedback">{{ __('validation.valid_feedback') }}</div>
-                                    <div class="invalid-feedback">{{ __('validation.invalid_feedback') }}</div>
+                            <div class="tab-pane fade mt-4 @if(LaravelLocalization::getCurrentLocale() == 'en') show active @endif" id="en" role="tabpanel" aria-labelledby="en-tab">
+                                <div class="row g-1">
+                                    <div class="col-md-12 mb-3">
+                                        <label class="form-label" for="validationCustom01">{{ __('category.name') }} <span class="text-danger">*</span></label>
+                                        <input class="form-control" id="validationCustom01" type="text" required=""
+                                            name="name_en" placeholder="ex: ELECTRONICS" value="{{ old('name_en') }}" />
+                                        <div class="valid-feedback">{{ __('validation.valid_feedback') }}</div>
+                                        <div class="invalid-feedback">{{ __('validation.invalid_feedback') }}</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade mt-4 @if(LaravelLocalization::getCurrentLocale() == 'ar') show active @endif" id="ar" role="tabpanel" aria-labelledby="ar-tab">
+                                <div class="row g-1">
+                                    <div class="col-md-12 mb-3">
+                                        <label class="form-label" for="validationCustom01">{{ __('category.name') }} <span class="text-danger">*</span></label>
+                                        <input class="form-control" id="validationCustom01" type="text" required=""
+                                            name="name_ar" placeholder="ex: ELECTRONICS" value="{{ old('name_ar') }}" />
+                                        <div class="valid-feedback">{{ __('validation.valid_feedback') }}</div>
+                                        <div class="invalid-feedback">{{ __('validation.invalid_feedback') }}</div>
+                                    </div>
                                 </div>
                             </div>
 
