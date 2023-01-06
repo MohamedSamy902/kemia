@@ -56,7 +56,7 @@
                                                     <h6><span class="badge badge-danger"><?php echo e(ucfirst($category->status)); ?></span></h6>
                                                 <?php endif; ?>
                                             </td>
-                                            <td><?php echo e($category->subCategory->name ?? 'NULL'); ?></td>
+                                            <td><?php echo e($category->subCategory->name ?? __('master.null')); ?></td>
                                             <td>
                                                 <div style="display: flex;">
                                                     <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('category-edit')): ?>
