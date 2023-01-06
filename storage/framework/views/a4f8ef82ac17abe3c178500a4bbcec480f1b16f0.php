@@ -53,7 +53,7 @@
                                     <div class="col-md-12 mb-3">
                                         <label class="form-label" for="validationCustom01"><?php echo e(__('category.name')); ?> <span class="text-danger">*</span></label>
                                         <input class="form-control" id="validationCustom01" type="text" required=""
-                                            name="name_ar" placeholder="ex: ELECTRONICS" value="<?php echo e(old('name_ar')); ?>" />
+                                            name="name_ar" placeholder="مثل: الكترونيات" value="<?php echo e(old('name_ar')); ?>" />
                                         <div class="valid-feedback"><?php echo e(__('validation.valid_feedback')); ?></div>
                                         <div class="invalid-feedback"><?php echo e(__('validation.invalid_feedback')); ?></div>
                                     </div>
