@@ -41,6 +41,16 @@
                                 </div>
                             </div>
 
+                            <div class="row g-1">
+                                <div class="col-md-12 mb-3">
+                                    <label class="form-label" for="validationCustom07"><?php echo e(__('master.image')); ?></label>
+                                    <input class="form-control" id="validationCustom07" type="file"
+                                        aria-label="file example" name="photo" />
+                                    <div class="valid-feedback"><?php echo e(__('validation.valid_feedback')); ?></div>
+                                    <div class="invalid-feedback"><?php echo e(__('validation.invalid_feedback')); ?></div>
+                                </div>
+                            </div>
+
                             <div class="row g-2">
 
                                 <div class="col-md-6">
@@ -74,15 +84,14 @@
                                     </select>
                                 </div>
 
+                                
+                                
                                 <div class="col-md-6 mb-3">
                                     <label class="form-label" for="validationDefault08"><?php echo e(__('product.sub-category')); ?></label>
                                     <select name="category_id" class="form-control" value="<?php echo e(old('category_id')); ?>">
-                                        <option value="" selected>No sub-category selected.</option>
-                                        <?php $__currentLoopData = $product_subcategory; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $psubcat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                            
-                                                <option value="<?php echo e($psubcat->id); ?>"><?php echo e($psubcat->name); ?></option>
-                                            
-                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                        
+                                            <option value="" disabled selected>Please select a sub-category</option>
+                                        
                                     </select>
                                 </div>
 
@@ -90,15 +99,13 @@
 
                             <div class="row g-1">
                                 <div class="col-md-12 mb-3">
-                                    <label class="form-label" for="validationCustom05"><?php echo e(__('master.password')); ?></label>
-                                    <input class="form-control" id="validationCustom05" type="text" name="password"
-                                        placeholder="***********" required="" value="<?php echo e(old('password')); ?>" />
+                                    <label class="form-label" for="validationCustom01"><?php echo e(__('product.keywords')); ?></label>
+                                    <input class="form-control" id="validationCustom01" type="text" required=""
+                                        name="title" placeholder="ex: Black shirt" value="<?php echo e(old('title')); ?>" />
                                     <div class="valid-feedback"><?php echo e(__('validation.valid_feedback')); ?></div>
                                     <div class="invalid-feedback"><?php echo e(__('validation.invalid_feedback')); ?></div>
                                 </div>
                             </div>
-
-                            
 
                             <div class="row g-1">
                                 <div class="col-md-12 mb-3">
@@ -119,17 +126,6 @@
                                     <div class="invalid-feedback"><?php echo e(__('validation.invalid_feedback')); ?></div>
                                 </div>
                             </div>
-
-                            <div class="row g-1">
-                                <div class="col-md-12 mb-3">
-                                    <label class="form-label" for="validationCustom07"><?php echo e(__('master.image')); ?></label>
-                                    <input class="form-control" id="validationCustom07" type="file"
-                                        aria-label="file example" name="photo" />
-                                    <div class="valid-feedback"><?php echo e(__('validation.valid_feedback')); ?></div>
-                                    <div class="invalid-feedback"><?php echo e(__('validation.invalid_feedback')); ?></div>
-                                </div>
-                            </div>
-
 
                             <button class="btn btn-primary" type="submit"><?php echo e(__('master.save')); ?></button>
                         </form>

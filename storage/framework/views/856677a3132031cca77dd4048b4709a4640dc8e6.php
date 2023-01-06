@@ -15,7 +15,13 @@
         <?php $__env->endSlot(); ?>
 
         <li class="breadcrumb-item"><a href="<?php echo e(route('categories.index')); ?>"><?php echo e(__('category.category')); ?></a></li>
-        <li class="breadcrumb-item active"> <?php echo e(__('category.category_edit')); ?></li>
+        <li class="breadcrumb-item active"> 
+            <?php if($category->parent_id == null): ?>
+                <?php echo e($category->name); ?> (<?php echo e($category->id); ?>)
+            <?php else: ?>
+                Category: <u><?php echo e($category->name); ?> (<?php echo e($category->id); ?>)</u> - Sub-category of: <u><?php echo e($category->subCategory->name); ?> (<?php echo e($category->parent_id); ?>)</u>
+            <?php endif; ?>
+        </li>
     <?php echo $__env->renderComponent(); ?>
 
 
@@ -24,7 +30,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header pb-0">
-                        <h5><?php echo e(__('master.data')); ?></h5>
+                        <h5><?php echo e(__('category.category')); ?></h5>
                     </div>
                     <div class="card-body">
                         <form class="needs-validation" novalidate="" method="post"
@@ -34,7 +40,7 @@
 
                             <div class="row g-1">
                                 <div class="col-md-12 mb-3">
-                                    <label class="form-label" for="validationCustom01"><?php echo e(__('category.name')); ?></label>
+                                    <label class="form-label" for="validationCustom01"><?php echo e(__('category.name')); ?> <span class="text-danger">*</span></label>
                                     <input class="form-control" id="validationCustom01" type="text" required=""
                                         name="name" placeholder="ex: ELECTRONICS" value="<?php echo e(Request::old('name') ? Request::old('name') : $category->name); ?>" />
                                     <div class="valid-feedback"><?php echo e(__('validation.valid_feedback')); ?></div>
@@ -44,13 +50,15 @@
 
                             <div class="row g-1 <?php if($category->parent_id == null): ?> d-none <?php endif; ?>">
                                 <div class="col-md-12 mb-3">
-                                    <label class="form-label"><?php echo e(__('category.sub-category-of')); ?></label>
-                                        <select name="parent_id" class="form-control" value="<?php echo e(Request::old('parent_id') ? Request::old('parent_id') : $category->parent_id); ?>">
+                                    <label class="form-label"><?php echo e(__('category.sub-category-of')); ?> <span class="text-danger">*</span></label>
+                                        <select name="parent_id" class="form-control" value="<?php echo e(Request::old('parent_id') ? Request::old('parent_id') : $category->parent_id); ?>" required>
                                             <option value="" selected>No sub-category selected.</option>
                                             <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                 <option value="<?php echo e($cat->id); ?>" <?php echo e($cat->id == $category->parent_id ? 'selected'  : ''); ?>><?php echo e($cat->name); ?></option>
                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                         </select>
+                                    <div class="valid-feedback"><?php echo e(__('validation.valid_feedback')); ?></div>
+                                    <div class="invalid-feedback"><?php echo e(__('validation.invalid_feedback')); ?></div>
                                 </div>
                             </div>
 

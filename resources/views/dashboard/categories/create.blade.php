@@ -23,7 +23,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header pb-0">
-                        <h5>{{ __('master.data') }}</h5>
+                        <h5>{{ __('category.category') }}</h5>
                     </div>
                     <div class="card-body">
                         <form class="needs-validation" novalidate="" method="post" action="{{ route('categories.store') }}"
@@ -32,7 +32,7 @@
 
                             <div class="row g-1">
                                 <div class="col-md-12 mb-3">
-                                    <label class="form-label" for="validationCustom01">{{ __('category.name') }}</label> <span class="text-danger">*</span>
+                                    <label class="form-label" for="validationCustom01">{{ __('category.name') }} <span class="text-danger">*</span></label>
                                     <input class="form-control" id="validationCustom01" type="text" required=""
                                         name="name" placeholder="ex: ELECTRONICS" value="{{ old('name') }}" />
                                     <div class="valid-feedback">{{ __('validation.valid_feedback') }}</div>
@@ -49,6 +49,8 @@
                                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
                                             @endforeach
                                         </select>
+                                    <div class="valid-feedback">{{ __('validation.valid_feedback') }}</div>
+                                    <div class="invalid-feedback">{{ __('validation.invalid_feedback') }}</div>
                                 </div>
                             </div>
 

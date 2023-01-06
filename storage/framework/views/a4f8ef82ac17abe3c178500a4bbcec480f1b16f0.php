@@ -24,7 +24,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header pb-0">
-                        <h5><?php echo e(__('master.data')); ?></h5>
+                        <h5><?php echo e(__('category.category')); ?></h5>
                     </div>
                     <div class="card-body">
                         <form class="needs-validation" novalidate="" method="post" action="<?php echo e(route('categories.store')); ?>"
@@ -33,7 +33,7 @@
 
                             <div class="row g-1">
                                 <div class="col-md-12 mb-3">
-                                    <label class="form-label" for="validationCustom01"><?php echo e(__('category.name')); ?></label> <span class="text-danger">*</span>
+                                    <label class="form-label" for="validationCustom01"><?php echo e(__('category.name')); ?> <span class="text-danger">*</span></label>
                                     <input class="form-control" id="validationCustom01" type="text" required=""
                                         name="name" placeholder="ex: ELECTRONICS" value="<?php echo e(old('name')); ?>" />
                                     <div class="valid-feedback"><?php echo e(__('validation.valid_feedback')); ?></div>
@@ -50,6 +50,8 @@
                                                 <option value="<?php echo e($category->id); ?>"><?php echo e($category->name); ?></option>
                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                         </select>
+                                    <div class="valid-feedback"><?php echo e(__('validation.valid_feedback')); ?></div>
+                                    <div class="invalid-feedback"><?php echo e(__('validation.invalid_feedback')); ?></div>
                                 </div>
                             </div>
 

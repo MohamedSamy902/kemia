@@ -14,7 +14,13 @@
         @endslot
 
         <li class="breadcrumb-item"><a href="{{ route('categories.index') }}">{{ __('category.category') }}</a></li>
-        <li class="breadcrumb-item active"> {{ __('category.category_edit') }}</li>
+        <li class="breadcrumb-item active"> 
+            @if($category->parent_id == null)
+                {{ $category->name }} ({{ $category->id }})
+            @else
+                Category: <u>{{ $category->name }} ({{ $category->id }})</u> - Sub-category of: <u>{{ $category->subCategory->name }} ({{ $category->parent_id }})</u>
+            @endif
+        </li>
     @endcomponent
 
 
@@ -23,7 +29,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header pb-0">
-                        <h5>{{ __('master.data') }}</h5>
+                        <h5>{{ __('category.category') }}</h5>
                     </div>
                     <div class="card-body">
                         <form class="needs-validation" novalidate="" method="post"
@@ -33,7 +39,7 @@
 
                             <div class="row g-1">
                                 <div class="col-md-12 mb-3">
-                                    <label class="form-label" for="validationCustom01">{{ __('category.name') }}</label>
+                                    <label class="form-label" for="validationCustom01">{{ __('category.name') }} <span class="text-danger">*</span></label>
                                     <input class="form-control" id="validationCustom01" type="text" required=""
                                         name="name" placeholder="ex: ELECTRONICS" value="{{Request::old('name') ? Request::old('name') : $category->name}}" />
                                     <div class="valid-feedback">{{ __('validation.valid_feedback') }}</div>
@@ -43,13 +49,15 @@
 
                             <div class="row g-1 @if($category->parent_id == null) d-none @endif">
                                 <div class="col-md-12 mb-3">
-                                    <label class="form-label">{{ __('category.sub-category-of') }}</label>
-                                        <select name="parent_id" class="form-control" value="{{Request::old('parent_id') ? Request::old('parent_id') : $category->parent_id}}">
+                                    <label class="form-label">{{ __('category.sub-category-of') }} <span class="text-danger">*</span></label>
+                                        <select name="parent_id" class="form-control" value="{{Request::old('parent_id') ? Request::old('parent_id') : $category->parent_id}}" required>
                                             <option value="" selected>No sub-category selected.</option>
                                             @foreach($categories as $cat)
                                                 <option value="{{ $cat->id }}" {{ $cat->id == $category->parent_id ? 'selected'  : '' }}>{{ $cat->name }}</option>
                                             @endforeach
                                         </select>
+                                    <div class="valid-feedback">{{ __('validation.valid_feedback') }}</div>
+                                    <div class="invalid-feedback">{{ __('validation.invalid_feedback') }}</div>
                                 </div>
                             </div>
 
