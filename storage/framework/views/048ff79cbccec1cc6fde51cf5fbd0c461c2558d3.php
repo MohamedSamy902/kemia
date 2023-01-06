@@ -32,7 +32,7 @@
                     <li class="dropdown">
                         <a href="<?php echo e(route('index')); ?>" class="nav-link menu-title" href="javascript:void(0)">
                             <i data-feather="home"></i>
-                            <span><?php echo e(__('Dashboard Home')); ?></span>
+                            <span><?php echo e(__('master.dashboard')); ?></span>
                         </a>
                     </li>
 

@@ -32,7 +32,7 @@
                     <li class="dropdown">
                         <a href="{{ route('index') }}" class="nav-link menu-title" href="javascript:void(0)">
                             <i data-feather="home"></i>
-                            <span>{{ __('Dashboard Home') }}</span>
+                            <span>{{ __('master.dashboard') }}</span>
                         </a>
                     </li>
 

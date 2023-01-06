@@ -30,9 +30,9 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th><?php echo e(__('categories.name')); ?></th>
-                                        <th><?php echo e(__('categories.status')); ?></th>
-                                        <th><?php echo e(__('categories.parent_id')); ?></th>
+                                        <th><?php echo e(__('category.name')); ?></th>
+                                        <th><?php echo e(__('category.status')); ?></th>
+                                        <th><?php echo e(__('category.parent_id')); ?></th>
 
                                         <th><?php echo e(__('master.processes')); ?></th>
                                     </tr>

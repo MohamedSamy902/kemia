@@ -37,9 +37,9 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>{{ __('categories.name') }}</th>
-                                        <th>{{ __('categories.status') }}</th>
-                                        <th>{{ __('categories.parent_id') }}</th>
+                                        <th>{{ __('category.name') }}</th>
+                                        <th>{{ __('category.status') }}</th>
+                                        <th>{{ __('category.parent_id') }}</th>
 
                                         <th>{{ __('master.processes') }}</th>
                                     </tr>
