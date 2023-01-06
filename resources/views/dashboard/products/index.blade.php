@@ -42,13 +42,13 @@
                                         <th>#</th>
                                         <th>{{ __('product.image') }}</th>
                                         <th>{{ __('product.title') }}</th>
-                                        <th>{{ __('product.price') }}</th>
                                         <th>{{ __('product.discount') }}</th>
+                                        <th>{{ __('product.price') }} ({{ __('product.egyptian_currency') }})</th>
                                         <th>{{ __('product.keywords') }}</th>
                                         <th>{{ __('product.description') }}</th>
                                         <th>{{ __('product.meta_description') }}</th>
-                                        <th>{{ __('product.category') }}</th>
-                                        <th>{{ __('product.sub_category') }}</th>
+                                        <th>{{ __('product.product_category') }}</th>
+                                        <th>{{ __('product.product_sub_category') }}</th>
 
                                         <th>{{ __('master.processes') }}</th>
                                     </tr>
@@ -58,15 +58,29 @@
                                     @foreach ($all_products as $product)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td><img src="{{ $product->image }}" alt="{{ $product->title.'img' }}"></td>
+                                            <td><img src="{{ $product->image }}" alt="{{ $product->title.'.img' }}"></td>
                                             <td>{{ $product->title }}</td>
-                                            <td>{{ $product->price }}</td>
-                                            <td>{{ $product->discount ?? 'NULL' }}</td>
-                                            <td>{{ $product->keywords ?? 'NULL' }}</td>
-                                            <td>{{ $product->description ?? 'NULL' }}</td>
-                                            <td>{{ $product->meta_description ?? 'NULL' }}</td>
-                                            <td>{{ $product->category->name ?? 'NULL' }}</td>
-                                            <td>{{ $product->category->parent_id ?? 'NULL' }}</td>
+                                            <td class="text-center">
+                                                @if($product->discount <= 0 || $product->discount == null)
+                                                    —
+                                                @else
+                                                    {{ $product->discount * 100 }}%
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if($product->discount <= 0 || $product->discount == null)
+                                                    {{ $product->price }}
+                                                @else
+                                                    <del class="text-danger">{{ $product->price }}</del> 
+                                                    <span class="text-primary">&RightArrow;</span> 
+                                                    <span class="text-success">{{ $product->price - ($product->price * $product->discount) }}</span>
+                                                @endif
+                                            </td>
+                                            <td>{{ $product->keywords ?? __('master.null') }}</td>
+                                            <td>{{ $product->description ?? __('master.null') }}</td>
+                                            <td>{{ $product->meta_description ?? __('master.null') }}</td>
+                                            <td>{{ $product->category->name ?? __('master.null') }}</td>
+                                            <td>{{ $product->category->parent_id ?? __('master.null') }}</td>
                                             <td>
                                                 <div style="display: flex;">
                                                     @can('product-edit')

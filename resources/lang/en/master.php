@@ -10,7 +10,10 @@ return  [
     'status'        => 'Status',
     'image'         => 'Image',
     'list'          => 'list',
+
     'email_mobile'  => 'Email Or Mobile',
+
+    'null'          => 'NULL',
 
     'name'                  => 'Name',
     'name_ar'               => 'Name Ar',

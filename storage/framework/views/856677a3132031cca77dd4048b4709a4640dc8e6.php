@@ -17,9 +17,9 @@
         <li class="breadcrumb-item"><a href="<?php echo e(route('categories.index')); ?>"><?php echo e(__('category.category')); ?></a></li>
         <li class="breadcrumb-item active"> 
             <?php if($category->parent_id == null): ?>
-                <?php echo e($category->name); ?> (<?php echo e($category->id); ?>)
+                <?php echo e($category->name); ?> (ID: <?php echo e($category->id); ?>)
             <?php else: ?>
-                <?php echo e($category->name); ?> (<?php echo e($category->id); ?>) <span class="text-danger">&RightArrow;</span> <?php echo e($category->subCategory->name); ?> (<?php echo e($category->parent_id); ?>)
+                <?php echo e($category->name); ?> (ID: <?php echo e($category->id); ?>) <span class="text-danger">&RightArrow;</span> <?php echo e($category->subCategory->name); ?> (ID: <?php echo e($category->parent_id); ?>)
             <?php endif; ?>
         </li>
     <?php echo $__env->renderComponent(); ?>

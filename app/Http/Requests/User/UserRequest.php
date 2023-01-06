@@ -29,7 +29,7 @@ class UserRequest extends FormRequest
             'email'         => 'required|email|unique:users,email,except,'. $this->id,
             'password'      => 'required|string|min:6|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/',
             'roles_name'    => 'required|string|exists:roles,name',
-            'photo'         => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048|nullable',
+            'photo'         => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:3048',
             'view'          => 'nullable|string|in:yes,no',
         ];
     }

@@ -47,16 +47,23 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $product                   = new Product();
+        // $validator = Validator::make(
+        //     ['keywords' => 'nullable']
+        // );
+
+        $product                   = new Product;
         $product->title            = $request->title;
         $product->price            = $request->price;
-        $product->discount         = $request->title;
+        $product->discount         = $request->discount;
         $product->description      = $request->description;
         $product->meta_description = $request->meta_description;
         $product->keywords         = $request->keywords;
-        $product->image            = $request->image;
+        $product->image            = "/assets/images/dashboard/".$request->image;
         $product->category_id      = $request->category_id;
         $product->save();
+
+        return redirect()->route('products.index')
+        ->with('success', __('master.messages_save'));
     }
 
     /**

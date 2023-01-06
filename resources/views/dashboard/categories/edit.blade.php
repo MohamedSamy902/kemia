@@ -16,9 +16,9 @@
         <li class="breadcrumb-item"><a href="{{ route('categories.index') }}">{{ __('category.category') }}</a></li>
         <li class="breadcrumb-item active"> 
             @if($category->parent_id == null)
-                {{ $category->name }} ({{ $category->id }})
+                {{ $category->name }} (ID: {{ $category->id }})
             @else
-                {{ $category->name }} ({{ $category->id }}) <span class="text-danger">&RightArrow;</span> {{ $category->subCategory->name }} ({{ $category->parent_id }})
+                {{ $category->name }} (ID: {{ $category->id }}) <span class="text-danger">&RightArrow;</span> {{ $category->subCategory->name }} (ID: {{ $category->parent_id }})
             @endif
         </li>
     @endcomponent
