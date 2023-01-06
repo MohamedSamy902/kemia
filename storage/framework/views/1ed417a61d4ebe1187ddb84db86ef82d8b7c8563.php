@@ -33,7 +33,7 @@
 
                             <div class="row g-1">
                                 <div class="col-md-12 mb-3">
-                                    <label class="form-label" for="validationCustom01"><?php echo e(__('product.title')); ?></label>
+                                    <label class="form-label" for="validationCustom01"><?php echo e(__('product.title')); ?> <span class="text-danger">*</span></label>
                                     <input class="form-control" id="validationCustom01" type="text" required=""
                                         name="title" placeholder="ex: Black shirt" value="<?php echo e(old('title')); ?>" />
                                     <div class="valid-feedback"><?php echo e(__('validation.valid_feedback')); ?></div>
@@ -43,7 +43,7 @@
 
                             <div class="row g-1">
                                 <div class="col-md-12 mb-3">
-                                    <label class="form-label" for="validationCustom07"><?php echo e(__('master.image')); ?></label>
+                                    <label class="form-label" for="validationCustom07"><?php echo e(__('master.image')); ?> <span class="text-danger">*</span></label>
                                     <input class="form-control" id="validationCustom07" type="file"
                                         aria-label="file example" name="photo" />
                                     <div class="valid-feedback"><?php echo e(__('validation.valid_feedback')); ?></div>
@@ -54,7 +54,7 @@
                             <div class="row g-2">
 
                                 <div class="col-md-6">
-                                    <label class="form-label" for="validationCustom03"><?php echo e(__('product.price')); ?></label>
+                                    <label class="form-label" for="validationCustom03"><?php echo e(__('product.price')); ?> <span class="text-danger">*</span></label>
                                     <input class="form-control" id="validationCustom03" type="number" name="price" min="0.01"
                                         placeholder="Price in EGP" required="" value="<?php echo e(old('price')); ?>" />
                                     <div class="valid-feedback"><?php echo e(__('validation.valid_feedback')); ?></div>
@@ -62,10 +62,19 @@
                                 </div>
 
                                 <div class="col-md-6 mb-3">
-                                    <label class="form-label" for="validationCustom04"><?php echo e(__('product.discount')); ?></label>
-                                    <input class="form-control" id="validationCustom04" type="number" name="discount" min="0" max="1"
-                                        placeholder="ex: 0.20" required=""
-                                        value="<?php echo e(old('discount')); ?>" />
+                                    <label class="form-label" for="validationCustom04"><?php echo e(__('product.discount')); ?> (%)</label>
+                                    
+
+                                    <select class="form-control" value="<?php echo e(old('discount')); ?>">
+                                        <option name="" value="" disabled selected>Please select a discount.</option>
+                                        <?php
+                                            for($d = 0.01 ; $d < 1 ; $d = $d + 0.01){
+                                        ?>
+                                                <option value="<?php echo e($d); ?>" <?php echo e(isset($model) && $model->discount == $d ? 'selected'  : ''); ?>><?php echo e($d * 100); ?>%</option>
+                                        <?php
+                                            }
+                                        ?>
+                                    </select>
                                     <div class="valid-feedback"><?php echo e(__('validation.valid_feedback')); ?></div>
                                     <div class="invalid-feedback"><?php echo e(__('validation.invalid_feedback')); ?></div>
                                 </div>
@@ -82,6 +91,8 @@
                                             <option value="<?php echo e($pcat->id); ?>"><?php echo e($pcat->name); ?></option>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     </select>
+                                    <div class="valid-feedback"><?php echo e(__('validation.valid_feedback')); ?></div>
+                                    <div class="invalid-feedback"><?php echo e(__('validation.invalid_feedback')); ?></div>
                                 </div>
 
                                 
@@ -93,6 +104,8 @@
                                             <option value="" disabled selected>Please select a sub-category</option>
                                         
                                     </select>
+                                    <div class="valid-feedback"><?php echo e(__('validation.valid_feedback')); ?></div>
+                                    <div class="invalid-feedback"><?php echo e(__('validation.invalid_feedback')); ?></div>
                                 </div>
 
                             </div>

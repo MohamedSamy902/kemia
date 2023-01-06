@@ -23,7 +23,7 @@ return new class extends Migration
             $table->decimal('price');
             $table->decimal('discount')->nullable();
             $table->string('image');
-            $table->string('category_id')->nullable();
+            $table->string('category_id');
             $table->timestamps();
         });
     }
