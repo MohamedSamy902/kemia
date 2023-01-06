@@ -1,7 +1,7 @@
 
 
 <?php $__env->startSection('title'); ?>
-    <?php echo e(__('category.category_add')); ?>
+    <?php echo e(__('category.add_category')); ?>
 
 <?php $__env->stopSection(); ?>
 
@@ -15,7 +15,7 @@
         <?php $__env->endSlot(); ?>
 
         <li class="breadcrumb-item"><a href="<?php echo e(route('categories.index')); ?>"><?php echo e(__('category.category')); ?></a></li>
-        <li class="breadcrumb-item active"><?php echo e(__('category.category_add')); ?></li>
+        <li class="breadcrumb-item active"><?php echo e(__('category.add_category')); ?></li>
     <?php echo $__env->renderComponent(); ?>
 
 
@@ -43,7 +43,7 @@
 
                             <div class="row g-1">
                                 <div class="col-md-12 mb-3">
-                                    <label class="form-label"><?php echo e(__('category.sub-category-of')); ?></label>
+                                    <label class="form-label"><?php echo e(__('category.sub_category_of')); ?></label>
                                         <select name="parent_id" class="form-control" value="<?php echo e(old('parent_id')); ?>">
                                             <option value="" selected>No sub-category selected.</option>
                                             <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>

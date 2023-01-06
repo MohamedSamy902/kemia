@@ -1,7 +1,7 @@
 @extends('layouts.admin.master')
 
 @section('title')
-    {{ __('category.category_add') }}
+    {{ __('category.add_category') }}
 @endsection
 
 @push('css')
@@ -14,7 +14,7 @@
         @endslot
 
         <li class="breadcrumb-item"><a href="{{ route('categories.index') }}">{{ __('category.category') }}</a></li>
-        <li class="breadcrumb-item active">{{ __('category.category_add') }}</li>
+        <li class="breadcrumb-item active">{{ __('category.add_category') }}</li>
     @endcomponent
 
 
@@ -42,7 +42,7 @@
 
                             <div class="row g-1">
                                 <div class="col-md-12 mb-3">
-                                    <label class="form-label">{{ __('category.sub-category-of') }}</label>
+                                    <label class="form-label">{{ __('category.sub_category_of') }}</label>
                                         <select name="parent_id" class="form-control" value="{{ old('parent_id') }}">
                                             <option value="" selected>No sub-category selected.</option>
                                             @foreach($categories as $category)

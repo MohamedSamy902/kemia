@@ -18,7 +18,7 @@
             @if($category->parent_id == null)
                 {{ $category->name }} ({{ $category->id }})
             @else
-                Category: <u>{{ $category->name }} ({{ $category->id }})</u> - Sub-category of: <u>{{ $category->subCategory->name }} ({{ $category->parent_id }})</u>
+                {{ $category->name }} ({{ $category->id }}) <span class="text-danger">&RightArrow;</span> {{ $category->subCategory->name }} ({{ $category->parent_id }})
             @endif
         </li>
     @endcomponent
@@ -49,7 +49,7 @@
 
                             <div class="row g-1 @if($category->parent_id == null) d-none @endif">
                                 <div class="col-md-12 mb-3">
-                                    <label class="form-label">{{ __('category.sub-category-of') }} <span class="text-danger">*</span></label>
+                                    <label class="form-label">{{ __('category.sub_category_of') }} <span class="text-danger">*</span></label>
                                         <select name="parent_id" class="form-control" value="{{Request::old('parent_id') ? Request::old('parent_id') : $category->parent_id}}" required>
                                             <option value="" selected>No sub-category selected.</option>
                                             @foreach($categories as $cat)

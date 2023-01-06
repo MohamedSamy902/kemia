@@ -66,12 +66,12 @@
                                         placeholder="ex: 0.20" required=""
                                         value="{{ old('discount') }}" /> --}}
 
-                                    <select class="form-control" value="{{ old('discount') }}">
-                                        <option name="" value="" disabled selected>Please select a discount.</option>
+                                    <select name="discount" class="form-control" value="{{ old('discount') }}">
+                                        <option value="" disabled selected>Please select a discount.</option>
                                         <?php
-                                            for($d = 0.01 ; $d < 1 ; $d = $d + 0.01){
+                                            for($d = 0.01 ; $d < 1 ; $d = $d + 0.01){   //for(start => 1% ; end => 99% ; increment=> ++1)
                                         ?>
-                                                <option value="{{ $d }}" {{ isset($model) && $model->discount == $d ? 'selected'  : '' }}>{{ $d * 100 }}%</option>
+                                                <option value="{{ $d }}">{{ $d * 100 }}%</option>
                                         <?php
                                             }
                                         ?>
