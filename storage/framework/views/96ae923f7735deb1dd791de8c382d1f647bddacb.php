@@ -51,13 +51,15 @@
                                     <?php $__currentLoopData = $all_products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <tr>
                                             <td><?php echo e($loop->iteration); ?></td>
-                                            <td><img src="<?php echo e($product->image); ?>" alt="<?php echo e($product->title.'.img'); ?>" width="90"></td>
+                                            <td><img src="<?php echo e($product->image); ?>" alt="<?php echo e($product->title.'.img'); ?>" width="100"></td>
                                             <td><?php echo e($product->title); ?></td>
                                             <td class="text-center">
                                                 <?php if($product->discount <= 0 || $product->discount == null): ?>
                                                     —
                                                 <?php else: ?>
-                                                    <?php echo e($product->discount * 100); ?>%
+                                                    <span class="text-light font-weight-bold bg-dark p-3 rounded-circle">
+                                                        <?php echo e($product->discount * 100); ?>%
+                                                    </span>
                                                 <?php endif; ?>
                                             </td>
                                             <td>
@@ -71,7 +73,7 @@
                                                 <?php endif; ?>
                                             </td>
                                             <td><?php echo e($product->keywords ?? __('master.null')); ?></td>
-                                            <td><?php echo e($product->description ?? __('master.null')); ?></td>
+                                            <td><?php echo e(Str::words($product->description, 7, '...') ?? __('master.null')); ?></td>
                                             <td><?php echo e($product->meta_description ?? __('master.null')); ?></td>
                                             <td><?php echo e($product->category->name ?? __('master.null')); ?></td>
                                             <td><?php echo e($product->category->parent_id ?? __('master.null')); ?></td>

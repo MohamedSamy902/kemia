@@ -58,13 +58,15 @@
                                     @foreach ($all_products as $product)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td><img src="{{ $product->image }}" alt="{{ $product->title.'.img' }}" width="90"></td>
+                                            <td><img src="{{ $product->image }}" alt="{{ $product->title.'.img' }}" width="100"></td>
                                             <td>{{ $product->title }}</td>
                                             <td class="text-center">
                                                 @if($product->discount <= 0 || $product->discount == null)
                                                     —
                                                 @else
-                                                    {{ $product->discount * 100 }}%
+                                                    <span class="text-light font-weight-bold bg-dark p-3 rounded-circle">
+                                                        {{ $product->discount * 100 }}%
+                                                    </span>
                                                 @endif
                                             </td>
                                             <td>
@@ -77,7 +79,7 @@
                                                 @endif
                                             </td>
                                             <td>{{ $product->keywords ?? __('master.null') }}</td>
-                                            <td>{{ $product->description ?? __('master.null') }}</td>
+                                            <td>{{ Str::words($product->description, 7, '...') ?? __('master.null') }}</td>
                                             <td>{{ $product->meta_description ?? __('master.null') }}</td>
                                             <td>{{ $product->category->name ?? __('master.null') }}</td>
                                             <td>{{ $product->category->parent_id ?? __('master.null') }}</td>
