@@ -51,7 +51,7 @@
                                     <?php $__currentLoopData = $all_products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <tr>
                                             <td><?php echo e($loop->iteration); ?></td>
-                                            <td><img src="<?php echo e($product->image); ?>" alt="<?php echo e($product->title.'.img'); ?>"></td>
+                                            <td><img src="<?php echo e($product->image); ?>" alt="<?php echo e($product->title.'.img'); ?>" width="90"></td>
                                             <td><?php echo e($product->title); ?></td>
                                             <td class="text-center">
                                                 <?php if($product->discount <= 0 || $product->discount == null): ?>

@@ -9,7 +9,7 @@ return  [
     'data'          => 'Data',
     'status'        => 'Status',
     'image'         => 'Image',
-    'list'          => 'list',
+    'list'          => 'List',
 
     'email_mobile'  => 'Email Or Mobile',
 

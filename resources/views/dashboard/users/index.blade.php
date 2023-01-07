@@ -28,12 +28,13 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
+                                        <th>{{ __('master.image') }}</th>
                                         <th>{{ __('master.name') }}</th>
                                         <th>{{ __('master.email') }}</th>
                                         <th>{{ __('master.phone') }}</th>
                                         <th>{{ __('master.view') }}</th>
                                         <th>{{ __('role.role') }}</th>
-                                        <th>{{ __('master.image') }}</th>
+                                        <th>{{ __('master.status') }}</th>
 
                                         <th>{{ __('master.processes') }}</th>
                                     </tr>
@@ -42,15 +43,23 @@
                                     @foreach ($users as $user)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
+                                            <td><img style="max-width: 100px;max-height: 100px;" src="{{ $user->getFirstMediaUrl('user') != null ?  $user->getFirstMediaUrl('user') : asset('assets/images/dashboard/1.png')}}"></td>
                                             <td>{{ $user->name }}</td>
                                             {{-- <td><a href="{{ route('users.show', $user->id) }}">{{ $user->name }}</a>
                                             </td> --}}
                                             <td>{{ $user->email }}</td>
                                             <td>{{ $user->mobile }}</td>
                                             <td>{{ $user->view }}</td>
-                                            <td>{{ $user->roles_name }}</td>
-
-                                            <td><img style="max-width: 100px;max-height: 100px;" src="{{ $user->getFirstMediaUrl('user') != null ?  $user->getFirstMediaUrl('user') : asset('assets/images/dashboard/1.png')}}"></td>
+                                            <td>{{ ucfirst($user->roles_name) }}</td>
+                                            <td class="text-center">
+                                                @if($user->status == "active")
+                                                    <h6><span class="badge badge-success">{{ ucfirst($user->status) }}</span></h6>
+                                                @elseif($user->status == "inactive")
+                                                    <h6><span class="badge badge-info">{{ ucfirst($user->status) }}</span></h6>
+                                                @else($category->status == "block")
+                                                    <h6><span class="badge badge-danger">{{ ucfirst($user->status) }}</span></h6>
+                                                @endif
+                                            </td>
                                             <td>
                                                 <div style="display: flex;">
                                                     @can('user-edit')

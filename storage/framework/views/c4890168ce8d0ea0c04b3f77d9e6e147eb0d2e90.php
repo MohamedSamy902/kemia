@@ -29,12 +29,13 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
+                                        <th><?php echo e(__('master.image')); ?></th>
                                         <th><?php echo e(__('master.name')); ?></th>
                                         <th><?php echo e(__('master.email')); ?></th>
                                         <th><?php echo e(__('master.phone')); ?></th>
                                         <th><?php echo e(__('master.view')); ?></th>
                                         <th><?php echo e(__('role.role')); ?></th>
-                                        <th><?php echo e(__('master.image')); ?></th>
+                                        <th><?php echo e(__('master.status')); ?></th>
 
                                         <th><?php echo e(__('master.processes')); ?></th>
                                     </tr>
@@ -43,14 +44,22 @@
                                     <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <tr>
                                             <td><?php echo e($loop->iteration); ?></td>
+                                            <td><img style="max-width: 100px;max-height: 100px;" src="<?php echo e($user->getFirstMediaUrl('user') != null ?  $user->getFirstMediaUrl('user') : asset('assets/images/dashboard/1.png')); ?>"></td>
                                             <td><?php echo e($user->name); ?></td>
                                             
                                             <td><?php echo e($user->email); ?></td>
                                             <td><?php echo e($user->mobile); ?></td>
                                             <td><?php echo e($user->view); ?></td>
-                                            <td><?php echo e($user->roles_name); ?></td>
-
-                                            <td><img style="max-width: 100px;max-height: 100px;" src="<?php echo e($user->getFirstMediaUrl('user') != null ?  $user->getFirstMediaUrl('user') : asset('assets/images/dashboard/1.png')); ?>"></td>
+                                            <td><?php echo e(ucfirst($user->roles_name)); ?></td>
+                                            <td class="text-center">
+                                                <?php if($user->status == "active"): ?>
+                                                    <h6><span class="badge badge-success"><?php echo e(ucfirst($user->status)); ?></span></h6>
+                                                <?php elseif($user->status == "inactive"): ?>
+                                                    <h6><span class="badge badge-info"><?php echo e(ucfirst($user->status)); ?></span></h6>
+                                                <?php else: ?>
+                                                    <h6><span class="badge badge-danger"><?php echo e(ucfirst($user->status)); ?></span></h6>
+                                                <?php endif; ?>
+                                            </td>
                                             <td>
                                                 <div style="display: flex;">
                                                     <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('user-edit')): ?>

@@ -1,9 +1,9 @@
 <div class="page-main-header">
     <div class="main-header-right row m-0">
         <div class="main-header-left">
-            <div class="logo-wrapper"><a href="<?php echo e(route('index')); ?>"><img class="img-fluid"
+            <div class="logo-wrapper"><a href="<?php echo e(route('dashboard.home')); ?>"><img class="img-fluid"
                         src="<?php echo e(asset('site')); ?>/assets/images/2448648.png" alt=""></a></div>
-            <div class="dark-logo-wrapper"><a href="<?php echo e(route('index')); ?>"><img class="img-fluid"
+            <div class="dark-logo-wrapper"><a href="<?php echo e(route('dashboard.home')); ?>"><img class="img-fluid"
                         src="<?php echo e(asset('site')); ?>/assets/images/2448648.png" alt=""></a></div>
             <div class="toggle-sidebar"><i class="status_toggle middle" data-feather="align-center" id="sidebar-toggle">
                 </i></div>

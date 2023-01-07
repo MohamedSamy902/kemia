@@ -39,7 +39,7 @@
 	                            </div>
 	                            <a class="link" href="{{ route('forget-password') }}">Forgot password?</a>
 	                        </div>
-	                        <div class="form-group"><a class="btn btn-primary btn-block" href="{{route('index')  }}" type="submit">Sign in</a></div>
+	                        <div class="form-group"><a class="btn btn-primary btn-block" href="{{route('dashboard.home')  }}" type="submit">Sign in</a></div>
 	                        <div class="login-social-title">
 	                            <h5>Sign in with</h5>
 	                        </div>

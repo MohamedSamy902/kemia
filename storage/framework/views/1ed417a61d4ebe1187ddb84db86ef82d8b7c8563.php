@@ -44,8 +44,7 @@
                             <div class="row g-1">
                                 <div class="col-md-12 mb-3">
                                     <label class="form-label" for="validationCustom07"><?php echo e(__('master.image')); ?> <span class="text-danger">*</span></label>
-                                    <input class="form-control" id="validationCustom07" type="file"
-                                        aria-label="file example" name="image" />
+                                    <input class="form-control" id="validationCustom07" type="file" aria-label="file example" name="image" />
                                     <div class="valid-feedback"><?php echo e(__('validation.valid_feedback')); ?></div>
                                     <div class="invalid-feedback"><?php echo e(__('validation.invalid_feedback')); ?></div>
                                 </div>
@@ -97,7 +96,20 @@
 
                                 
                                 
-                                
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label" for="validationDefault08"><?php echo e(__('product.product_sub_category')); ?> <span class="text-danger">*</span></label>
+
+                                    <select name="sub_category" class="form-control" value="<?php echo e(old('sub_category')); ?>">
+                                        <option value="" disabled selected>Please select a sub-category</option>
+
+                                        <?php $__currentLoopData = $product_subcategory; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $psubcat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <option value="<?php echo e($psubcat->id); ?>"><?php echo e($psubcat->name); ?></option>
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                    
+                                    </select>
+                                    <div class="valid-feedback"><?php echo e(__('validation.valid_feedback')); ?></div>
+                                    <div class="invalid-feedback"><?php echo e(__('validation.invalid_feedback')); ?></div>
+                                </div>
 
                             </div>
 

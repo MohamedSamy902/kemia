@@ -28,7 +28,7 @@
 	                                <div class="col-sm-6">
 	                                    <div class="media">
 	                                        <div class="media-left">
-	                                            <a href="{{ route('index') }}"><img class="media-object img-60" src="{{asset('assets/images/logo/logo-1.png')}}" alt="" /></a>
+	                                            <a href="{{ route('dashboard.home') }}"><img class="media-object img-60" src="{{asset('assets/images/logo/logo-1.png')}}" alt="" /></a>
 	                                        </div>
 	                                        <div class="media-body m-l-20">
 	                                            <h4 class="media-heading f-w-600">Viho</h4>

@@ -16,25 +16,35 @@ class CreateProductSeeder extends Seeder
     public function run()
     {
         $product = Product::create([  // ID = 1
-            'title'              => 'galaxy note 5',
-            'description'        => 'Samsung',
-            'meta_description'   => 'black, made in vietnam',
-            'keywords'           => 'mobile, phone, portable',
-            'price'              => '5000',
-            'discount'           => '0.05',
-            'image'              => '/assets/images/note5.jfif',
-            'category_id'        => 1,
+            'title'            => 'Galaxy Note 5',
+            'description'      => 'Samsung.',
+            'meta_description' => 'Black, made in vietnam.',
+            'keywords'         => 'mobile, phone, portable device',
+            'price'            => '5000',
+            'discount'         => '0.07',
+            'image'            => '/assets/images/custom_images/note5.jfif',
+            'category_id'      => 1,    // category_id = 1 (Electronics)
+        ]);
+
+        $product = Product::create([  // ID = 1
+            'title'            => 'Bedroom Sofa',
+            'meta_description' => 'Grey, made in Japan.',
+            'keywords'         => 'sleeping, comfort, relaxing',
+            'price'            => '4500',
+            'discount'         => '0.12',
+            'image'            => '/assets/images/custom_images/bedroom-sofa.jpg',
+            'category_id'      => 2,    // category_id = 2 (Furniture)
         ]);
 
         $product = Product::create([  // ID = 2
-            'title'              => 'Pubgy latest',
-            'description'        => 'war video game',
-            'meta_description'   => 'multiplayer system and story mode',
-            'keywords'           => 'game, war, guns',
-            'price'              => '500',
-            'discount'           => '0',
-            'image'              => '/assets/images/pubgy.jfif',
-            'category_id'        => 3,
+            'title'            => 'PUBG',
+            'description'      => 'The game PUBG (is aka Player Unknown Battle Grounds) War video game has a very good features (icluding "Team-work" & "Solo" gameplay).',
+            'meta_description' => 'Multiplayer system and story mode.',
+            'keywords'         => 'game, war, guns, multiplayer',
+            'price'            => '800',
+            'discount'         => '0',
+            'image'            => '/assets/images/custom_images/pubg.jfif',
+            'category_id'      => 3,    // category_id = 3 (Video Games)
         ]);
     }
 }

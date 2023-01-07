@@ -25,7 +25,7 @@ Route::group(
             ],
 
             function () {
-                Route::get('/', [HomeController::class, 'index'])->name('index');
+                Route::get('/', [HomeController::class, 'index'])->name('dashboard.home');
 
                 /** Start Route Users **/
                 Route::resource('users', UserController::class);
@@ -36,7 +36,7 @@ Route::group(
                 /** End Route Roles **/
 
                 /** Start Route Categories **/
-                Route::resource('categories', CategoryController::class);
+                Route::resource('categories', CategoryController::class)->except(['show']);
                 /** End Route Categories **/
 
                 /** Start Route Products **/

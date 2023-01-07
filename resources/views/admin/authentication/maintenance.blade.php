@@ -25,7 +25,7 @@
 	                    Our Site is Currently under maintenance We will be back Shortly<br />
 	                    Thank You For Patience
 	                </h4>
-	                <div><a class="btn btn-primary btn-lg text-light" href="{{ route('index') }}">BACK TO HOME PAGE</a></div>
+	                <div><a class="btn btn-primary btn-lg text-light" href="{{ route('dashboard.home') }}">BACK TO HOME PAGE</a></div>
 	            </div>
 	        </div>
 	    </div>

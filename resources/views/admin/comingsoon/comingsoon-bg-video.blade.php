@@ -24,7 +24,7 @@
 	                <source src="{{ asset('assets/video/auth-bg.mp4') }}" type="video/mp4" />
 	            </video>
 	            <div class="comingsoon-inner text-center">
-	                <a href="{{ route('index') }}"><img src="{{ asset('assets/images/logo/logo-1.png') }}" alt="" /></a>
+	                <a href="{{ route('dashboard.home') }}"><img src="{{ asset('assets/images/logo/logo-1.png') }}" alt="" /></a>
 	                <h5>WE ARE COMING SOON</h5>
 	                <div class="countdown" id="clockdiv">
 	                    <ul>

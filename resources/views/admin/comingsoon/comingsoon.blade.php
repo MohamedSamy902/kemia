@@ -20,7 +20,7 @@
 	    <div class="container-fluid p-0">
 	        <div class="comingsoon">
 	            <div class="comingsoon-inner text-center">
-	                <a href="{{ route('index') }}"><img src="{{ asset('assets/images/logo/logo-1.png') }}" alt="" /></a>
+	                <a href="{{ route('dashboard.home') }}"><img src="{{ asset('assets/images/logo/logo-1.png') }}" alt="" /></a>
 	                <h5>WE ARE COMING SOON</h5>
 	                <div class="countdown" id="clockdiv">
 	                    <ul>

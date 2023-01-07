@@ -47,7 +47,7 @@
                                     </svg>
                                 </div>
                                 
-                                <p><?php echo e(__('category.cat')); ?></p>
+                                <p><?php echo e(__('category.categories')); ?></p>
                                 <div class="parrten">
                                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -90,7 +90,7 @@
                                     </svg>
                                 </div>
                                 
-                                <p><?php echo e(__('sub_category.sub_cat')); ?></p>
+                                <p><?php echo e(__('category.sub_categories')); ?></p>
                                 <div class="parrten">
                                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"

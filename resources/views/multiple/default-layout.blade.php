@@ -318,8 +318,8 @@
                                 </div>
                               </div>
                             </td>
-                            <td><a href="{{route('index')}}" target="_blank">Edit</a></td>
-                            <td><a href="{{route('index')}}" target="_blank">Delete</a></td>
+                            <td><a href="{{route('dashboard.home')}}" target="_blank">Edit</a></td>
+                            <td><a href="{{route('dashboard.home')}}" target="_blank">Delete</a></td>
                           </tr>
                           <tr>
                             <td>
@@ -332,8 +332,8 @@
                                 </div>
                               </div>
                             </td>
-                            <td><a href="{{route('index')}}" target="_blank">Edit</a></td>
-                            <td><a href="{{route('index')}}" target="_blank">Delete</a></td>
+                            <td><a href="{{route('dashboard.home')}}" target="_blank">Edit</a></td>
+                            <td><a href="{{route('dashboard.home')}}" target="_blank">Delete</a></td>
                           </tr>
                           <tr>
                             <td>
@@ -358,8 +358,8 @@
                                 </div>
                               </div>
                             </td>
-                            <td><a href="{{route('index')}}" target="_blank">Edit</a></td>
-                            <td><a href="{{route('index')}}" target="_blank">Delete</a></td>
+                            <td><a href="{{route('dashboard.home')}}" target="_blank">Edit</a></td>
+                            <td><a href="{{route('dashboard.home')}}" target="_blank">Delete</a></td>
                           </tr>
                           <tr>
                             <td>
@@ -382,8 +382,8 @@
                                 </div>
                               </div>
                             </td>
-                            <td><a href="{{route('index')}}" target="_blank">Edit</a></td>
-                            <td><a href="{{route('index')}}" target="_blank">Delete</a></td>
+                            <td><a href="{{route('dashboard.home')}}" target="_blank">Edit</a></td>
+                            <td><a href="{{route('dashboard.home')}}" target="_blank">Delete</a></td>
                           </tr>
                           <tr>
                             <td>
@@ -405,8 +405,8 @@
                                 </div>
                               </div>
                             </td>
-                            <td><a href="{{route('index')}}" target="_blank">Edit</a></td>
-                            <td><a href="{{route('index')}}" target="_blank">Delete                           </a></td>
+                            <td><a href="{{route('dashboard.home')}}" target="_blank">Edit</a></td>
+                            <td><a href="{{route('dashboard.home')}}" target="_blank">Delete                           </a></td>
                           </tr>
                         </tbody>
                       </table>
@@ -466,11 +466,11 @@
                   &lt;/div&gt;
             &lt;/td&gt;
             &lt;td&gt;
-              &lt;a href='{{route('index')}}' target='_blank'&gt; Edit
+              &lt;a href='{{route('dashboard.home')}}' target='_blank'&gt; Edit
               &lt;/a&gt;
             &lt;/td&gt;
             &lt;td&gt;
-              &lt;a href='{{route('index')}}' target='_blank'&gt; Detete
+              &lt;a href='{{route('dashboard.home')}}' target='_blank'&gt; Detete
               &lt;/a&gt;
             &lt;/td&gt;
           &lt;/tr&gt;
@@ -487,11 +487,11 @@
                   &lt;/div&gt;
             &lt;/td&gt;
             &lt;td&gt;
-              &lt;a href='{{route('index')}}' target='_blank'&gt; Edit
+              &lt;a href='{{route('dashboard.home')}}' target='_blank'&gt; Edit
               &lt;/a&gt;
             &lt;/td&gt;
             &lt;td&gt;
-              &lt;a href='{{route('index')}}' target='_blank'&gt; Detete
+              &lt;a href='{{route('dashboard.home')}}' target='_blank'&gt; Detete
               &lt;/a&gt;
             &lt;/td&gt;
           &lt;/tr&gt;
@@ -510,11 +510,11 @@
                   &lt;/div&gt;
             &lt;/td&gt;
             &lt;td&gt;
-              &lt;a href='{{route('index')}}' target='_blank'&gt; Edit
+              &lt;a href='{{route('dashboard.home')}}' target='_blank'&gt; Edit
               &lt;/a&gt;
             &lt;/td&gt;
             &lt;td&gt;
-              &lt;a href='{{route('index')}}' target='_blank'&gt; Detete
+              &lt;a href='{{route('dashboard.home')}}' target='_blank'&gt; Detete
               &lt;/a&gt;
             &lt;/td&gt;
           &lt;/tr&gt;
@@ -540,11 +540,11 @@
                   &lt;/div&gt;
             &lt;/td&gt;
             &lt;td&gt;
-              &lt;a href='{{route('index')}}' target='_blank'&gt; Edit
+              &lt;a href='{{route('dashboard.home')}}' target='_blank'&gt; Edit
               &lt;/a&gt;
             &lt;/td&gt;
             &lt;td&gt;
-              &lt;a href='{{route('index')}}' target='_blank'&gt; Detete
+              &lt;a href='{{route('dashboard.home')}}' target='_blank'&gt; Detete
               &lt;/a&gt;
             &lt;/td&gt;
           &lt;/tr&gt;
@@ -570,11 +570,11 @@
                   &lt;/div&gt;
             &lt;/td&gt;
             &lt;td&gt;
-              &lt;a href='{{route('index')}}' target='_blank'&gt; Edit
+              &lt;a href='{{route('dashboard.home')}}' target='_blank'&gt; Edit
               &lt;/a&gt;
             &lt;/td&gt;
             &lt;td&gt;
-              &lt;a href='{{route('index')}}' target='_blank'&gt; Detete
+              &lt;a href='{{route('dashboard.home')}}' target='_blank'&gt; Detete
               &lt;/a&gt;
             &lt;/td&gt;
           &lt;/tr&gt;
