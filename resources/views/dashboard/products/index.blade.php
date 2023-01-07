@@ -64,7 +64,7 @@
                                                 @if($product->discount <= 0 || $product->discount == null)
                                                     —
                                                 @else
-                                                    <span class="text-light font-weight-bold bg-dark p-3 rounded-circle">
+                                                    <span class="text-light font-weight-bold bg-dark p-1 rounded">
                                                         {{ $product->discount * 100 }}%
                                                     </span>
                                                 @endif

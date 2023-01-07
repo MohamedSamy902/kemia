@@ -57,7 +57,7 @@
                                                 <?php if($product->discount <= 0 || $product->discount == null): ?>
                                                     —
                                                 <?php else: ?>
-                                                    <span class="text-light font-weight-bold bg-dark p-3 rounded-circle">
+                                                    <span class="text-light font-weight-bold bg-dark p-1 rounded">
                                                         <?php echo e($product->discount * 100); ?>%
                                                     </span>
                                                 <?php endif; ?>
