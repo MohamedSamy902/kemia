@@ -8,7 +8,7 @@ use Spatie\Translatable\HasTranslations;
 
 class Category extends Model
 {
-    use HasFactory , HasTranslations;
+    use HasFactory, HasTranslations;
 
     protected $fillable = [
         'name',
@@ -31,5 +31,10 @@ class Category extends Model
     public function product()
     {
         return $this->hasMany(Product::class, 'category_id', 'id');
+    }
+
+    public function product_subCategory()
+    {
+        return $this->hasMany(Product::class, 'sub_category', 'id');
     }
 }

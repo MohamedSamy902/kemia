@@ -32,15 +32,16 @@
 
                                 <thead>
                                     <tr>
+                                        <th>#</th>
                                         <th><?php echo e(__('product.image')); ?></th>
                                         <th><?php echo e(__('product.title')); ?></th>
-                                        <th><?php echo e(__('product.price')); ?></th>
                                         <th><?php echo e(__('product.discount')); ?></th>
+                                        <th><?php echo e(__('product.price')); ?> (<?php echo e(__('product.egyptian_currency')); ?>)</th>
                                         <th><?php echo e(__('product.keywords')); ?></th>
                                         <th><?php echo e(__('product.description')); ?></th>
                                         <th><?php echo e(__('product.meta_description')); ?></th>
-                                        <th><?php echo e(__('product.category')); ?></th>
-                                        <th><?php echo e(__('product.sub_category')); ?></th>
+                                        <th><?php echo e(__('product.product_category')); ?></th>
+                                        <th><?php echo e(__('product.product_sub_category')); ?></th>
 
                                         <th><?php echo e(__('master.processes')); ?></th>
                                     </tr>
@@ -49,15 +50,31 @@
                                 <tbody>
                                     <?php $__currentLoopData = $all_products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <tr>
-                                            <td><?php echo e($product->image ?? 'NULL'); ?></td>
-                                            <td><?php echo e($product->title ?? 'NULL'); ?></td>
-                                            <td><?php echo e($product->price ?? 'NULL'); ?></td>
-                                            <td><?php echo e($product->discount ?? 'NULL'); ?></td>
-                                            <td><?php echo e($product->keywords ?? 'NULL'); ?></td>
-                                            <td><?php echo e($product->description ?? 'NULL'); ?></td>
-                                            <td><?php echo e($product->meta_description ?? 'NULL'); ?></td>
-                                            <td><?php echo e($product->category->name ?? 'NULL'); ?></td>
-                                            <td><?php echo e($product->category->parent_id?? 'NULL'); ?></td>
+                                            <td><?php echo e($loop->iteration); ?></td>
+                                            <td><img src="<?php echo e($product->image); ?>" alt="<?php echo e($product->title.'.img'); ?>" width="90"></td>
+                                            <td><?php echo e($product->title); ?></td>
+                                            <td class="text-center">
+                                                <?php if($product->discount <= 0 || $product->discount == null): ?>
+                                                    —
+                                                <?php else: ?>
+                                                    <?php echo e($product->discount * 100); ?>%
+                                                <?php endif; ?>
+                                            </td>
+                                            <td>
+                                                <?php if($product->discount <= 0 || $product->discount == null): ?>
+                                                    <?php echo e($product->price); ?>
+
+                                                <?php else: ?>
+                                                    <del class="text-danger"><?php echo e($product->price); ?></del> 
+                                                    <span class="text-primary">&RightArrow;</span> 
+                                                    <span class="text-success"><?php echo e($product->price - ($product->price * $product->discount)); ?></span>
+                                                <?php endif; ?>
+                                            </td>
+                                            <td><?php echo e($product->keywords ?? __('master.null')); ?></td>
+                                            <td><?php echo e($product->description ?? __('master.null')); ?></td>
+                                            <td><?php echo e($product->meta_description ?? __('master.null')); ?></td>
+                                            <td><?php echo e($product->category->name ?? __('master.null')); ?></td>
+                                            <td><?php echo e($product->category->parent_id ?? __('master.null')); ?></td>
                                             <td>
                                                 <div style="display: flex;">
                                                     <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('product-edit')): ?>

@@ -10,11 +10,11 @@
 @section('content')
     @component('components.breadcrumb')
         @slot('breadcrumb_title')
-            <h3>{{ __('category.category') }}</h3>
+            <h3>{{ __('product.product') }}</h3>
         @endslot
 
-        <li class="breadcrumb-item"><a href="{{ route('categories.index') }}">{{ __('category.category') }}</a></li>
-        <li class="breadcrumb-item active"> {{ __('category.category_edit') }}</li>
+        <li class="breadcrumb-item"><a href="{{ route('products.index') }}">{{ __('product.product') }}</a></li>
+        <li class="breadcrumb-item active"> {{ __('product.product_edit') }}</li>
     @endcomponent
 
 

@@ -43,8 +43,7 @@
                             <div class="row g-1">
                                 <div class="col-md-12 mb-3">
                                     <label class="form-label" for="validationCustom07">{{ __('master.image') }} <span class="text-danger">*</span></label>
-                                    <input class="form-control" id="validationCustom07" type="file"
-                                        aria-label="file example" name="image" />
+                                    <input class="form-control" id="validationCustom07" type="file" aria-label="file example" name="image" />
                                     <div class="valid-feedback">{{ __('validation.valid_feedback') }}</div>
                                     <div class="invalid-feedback">{{ __('validation.invalid_feedback') }}</div>
                                 </div>
@@ -108,16 +107,20 @@
                                     <div class="invalid-feedback">{{ __('validation.invalid_feedback') }}</div>
                                 </div> --}}
                                 
-                                {{-- <div class="col-md-6 mb-3">
+                                <div class="col-md-6 mb-3">
                                     <label class="form-label" for="validationDefault08">{{ __('product.product_sub_category') }} <span class="text-danger">*</span></label>
-                                    <select name="category_id" class="form-control" value="{{ old('category_id') }}">
+
+                                    <select name="sub_category" class="form-control" value="{{ old('sub_category') }}">
+                                        <option value="" disabled selected>Please select a sub-category</option>
+
                                         @foreach($product_subcategory as $psubcat)
-                                            <option value="" disabled selected>Please select a sub-category</option>
+                                            <option value="{{ $psubcat->id }}">{{ $psubcat->name }}</option>
                                         @endforeach
+                                    
                                     </select>
                                     <div class="valid-feedback">{{ __('validation.valid_feedback') }}</div>
                                     <div class="invalid-feedback">{{ __('validation.invalid_feedback') }}</div>
-                                </div> --}}
+                                </div>
 
                             </div>
 
