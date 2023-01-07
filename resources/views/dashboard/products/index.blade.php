@@ -58,7 +58,7 @@
                                     @foreach ($all_products as $product)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td><img src="{{ $product->image }}" alt="{{ $product->title.'.img' }}"></td>
+                                            <td><img src="{{ $product->image }}" alt="{{ $product->title.'.img' }}" width="90"></td>
                                             <td>{{ $product->title }}</td>
                                             <td class="text-center">
                                                 @if($product->discount <= 0 || $product->discount == null)

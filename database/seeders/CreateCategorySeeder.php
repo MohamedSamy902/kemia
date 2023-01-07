@@ -15,7 +15,7 @@ class CreateCategorySeeder extends Seeder
     public function run()
     {
         $category = Category::create([  // ID = 1
-            'name'      => 'Eelectronics',
+            'name'      => 'Electronics',
             'status'    => 'available',
             'parent_id' => null,
         ]);
@@ -45,7 +45,7 @@ class CreateCategorySeeder extends Seeder
         ]);
 
         $category = Category::create([ // ID = 6
-            'name'      => 'Playstations',
+            'name'      => 'Playstation',
             'status'    => 'available',
             'parent_id' => 1,
         ]);

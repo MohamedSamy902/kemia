@@ -36,6 +36,7 @@ class ProductController extends Controller
     {
         $product_category    = Category::whereNull('parent_id')->get();
         $product_subcategory = Category::whereNotNull('parent_id')->get();
+
         return view('dashboard.products.create', compact('product_category', 'product_subcategory'));
     }
 
@@ -51,6 +52,9 @@ class ProductController extends Controller
         //     ['keywords' => 'nullable']
         // );
 
+        $pic_name = $request->file('image')->getClientOriginalName();
+        
+
         $product                   = new Product;
         $product->title            = $request->title;
         $product->price            = $request->price;
@@ -58,12 +62,13 @@ class ProductController extends Controller
         $product->description      = $request->description;
         $product->meta_description = $request->meta_description;
         $product->keywords         = $request->keywords;
-        $product->image            = "/assets/images/dashboard/".$request->image;
+        $product->image            = '/assets/images/' . $pic_name;
         $product->category_id      = $request->category_id;
+        $product->sub_category     = $request->sub_category;
         $product->save();
 
         return redirect()->route('products.index')
-        ->with('success', __('master.messages_save'));
+            ->with('success', __('master.messages_save'));
     }
 
     /**
